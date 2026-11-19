@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.pexels.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 <script>
   // фото ще немає → ховаємо «биту» картинку, лишається какао-підкладка
   document.addEventListener('error', function (e) {
@@ -40,7 +40,7 @@
   --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
   --ease:cubic-bezier(.22,.7,.2,1);
   --header-h:72px;
-  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .96 0 0 0 0 .88 0 0 0 0 .78 0 0 0 .11 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --noise:url("data:image/png;base64,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");
   --cocoa:radial-gradient(ellipse at 38% 32%,#3B2418 0%,#2C1A11 48%,#1E120C 100%);
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -53,12 +53,12 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
 .on-light :focus-visible, .light :focus-visible{outline-color:var(--bordeaux)}
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--cream);color:var(--bordeaux);padding:10px 16px;border-radius:var(--radius-sm);text-decoration:none;font-weight:600;transition:top .2s}
-.skip:focus{top:12px}
+.skip{position:absolute;left:12px;top:12px;transform:translateY(-90px);z-index:200;background:var(--cream);color:var(--bordeaux);padding:10px 16px;border-radius:var(--radius-sm);text-decoration:none;font-weight:600;transition:transform .2s}
+.skip:focus{transform:none}
 .container{width:min(1200px,100% - 40px);margin-inline:auto}
 
 /* ---------- typography ---------- */
-h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;margin:0;letter-spacing:-.005em}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;margin:0;letter-spacing:-.005em}
 h2{font-size:clamp(2.3rem,5.2vw,4rem)}
 h3{font-size:1.6rem;font-weight:400}
 em,.it{font-style:italic}
@@ -75,7 +75,7 @@ em,.it{font-style:italic}
 @media (max-width:760px){.section-head.split{grid-template-columns:1fr}}
 
 /* ---------- buttons ---------- */
-.btn{--bg:var(--bordeaux);--fg:var(--cream);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;border-radius:var(--radius-sm);border:1px solid var(--bg);background:var(--bg);color:var(--fg);font-weight:600;font-size:.95rem;letter-spacing:.04em;text-decoration:none;transition:transform .25s var(--ease),background .25s,color .25s,box-shadow .25s;box-shadow:0 10px 24px -14px rgba(30,18,12,.7)}
+.btn{--bg:var(--bordeaux);--fg:var(--cream);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;border-radius:var(--radius-sm);border:1px solid var(--bg);background:var(--bg);color:var(--fg);font-weight:600;font-size:.95rem;letter-spacing:.04em;text-decoration:none;transition:transform .25s var(--ease),background-color .25s,color .25s;box-shadow:0 10px 24px -14px rgba(30,18,12,.7)}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
 .btn--cream{--bg:var(--cream);--fg:var(--bordeaux)}
@@ -86,7 +86,7 @@ em,.it{font-style:italic}
 .link-btn{background:none;border:0;padding:6px 0;color:var(--bordeaux);font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
 
 /* ---------- header ---------- */
-.site-header{position:fixed;inset:0 0 auto;z-index:50;height:var(--header-h);color:var(--cream);transition:background .35s,color .35s,box-shadow .35s}
+.site-header{position:fixed;inset:0 0 auto;z-index:50;height:var(--header-h);color:var(--cream);transition:background-color .35s,color .35s}
 .site-header.solid{background:rgba(243,233,221,.94);color:var(--choco);box-shadow:0 1px 0 rgba(201,162,126,.5);backdrop-filter:saturate(1.2) blur(8px);-webkit-backdrop-filter:saturate(1.2) blur(8px)}
 .site-header.solid :focus-visible{outline-color:var(--bordeaux)}
 .header-inner{height:100%;display:flex;align-items:center;gap:24px}
@@ -101,7 +101,7 @@ em,.it{font-style:italic}
 .nav a:hover::after{transform:scaleX(1)}
 .icon-btn{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:var(--radius-sm);border:1px solid currentColor;border-color:rgba(201,162,126,.6);background:transparent}
 .icon-btn svg{width:20px;height:20px}
-.cart-count{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--gold);color:var(--dark);font-size:.72rem;font-weight:700;display:grid;place-items:center;line-height:1}
+.cart-count{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--gold);color:var(--dark);font-size:.72rem;font-weight:600;display:grid;place-items:center;line-height:1}
 .cart-count[data-zero="true"]{display:none}
 .cart-count.bump{animation:bump .5s var(--ease)}
 @keyframes bump{40%{transform:scale(1.35)}}
@@ -120,11 +120,16 @@ em,.it{font-style:italic}
 .hero-wrap{position:relative;height:220vh;background:var(--bordeaux)}
 .hero{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bordeaux);isolation:isolate}
 .hero-photo{position:absolute;inset:0;z-index:0;background:var(--choco)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;transform:scale(1.12);will-change:transform}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;transform:scale(1.12)}
 .hero-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
-.hero-content{position:absolute;left:0;right:0;bottom:clamp(30px,6.5vh,64px);z-index:2;text-align:center;color:var(--cream);padding:0 20px;will-change:opacity,transform}
+.hero-flap{z-index:1}
+.hero-live .hero-photo img,.hero-live .hero-svg,.hero-live .hero-content{will-change:transform,opacity}
+.hero-static .hero-wrap{height:auto}
+.hero-static .hero{position:relative}
+.hero-static .hero-scroll{display:none}
+.hero-content{position:absolute;left:0;right:0;bottom:clamp(30px,6.5vh,64px);z-index:2;text-align:center;color:var(--cream);padding:0 20px}
 .hero-kicker{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
-.hero h1{font-size:clamp(2.4rem,5.4vw,4.6rem);font-style:italic;font-weight:300;margin:0 auto 22px;max-width:24ch}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.6rem);font-style:italic;font-weight:400;margin:0 auto 22px;max-width:24ch}
 .hero-scroll{position:absolute;left:50%;bottom:4px;z-index:2;transform:translateX(-50%);width:1px;height:20px;background:linear-gradient(var(--gold),transparent);opacity:.8}
 @media (max-width:600px){
   .hero-content{bottom:clamp(28px,5.5vh,52px)}
@@ -156,15 +161,15 @@ em,.it{font-style:italic}
 .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,32px)}
 @media (max-width:980px){.grid-cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.grid-cards{grid-template-columns:1fr}}
-.card{background:#FBF5EE;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);display:flex;flex-direction:column;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-.card:hover{transform:translateY(-4px);box-shadow:0 24px 44px -24px rgba(30,18,12,.6)}
+.card{background:#FBF5EE;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);display:flex;flex-direction:column;transition:transform .45s var(--ease)}
+.card:hover{transform:translateY(-4px)}
 .card[hidden]{display:none}
 .ph{position:relative;margin:0;aspect-ratio:1/1;overflow:hidden;background:radial-gradient(circle at 40% 35%,#6b4632,#2a1810 75%)}
 .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .card-tag{z-index:2}
 .card:hover .ph img{transform:scale(1.05)}
 .ph.img-failed img{visibility:hidden}
-.card-tag{position:absolute;left:14px;top:14px;background:rgba(243,233,221,.94);color:var(--bordeaux);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:6px 10px;border-radius:var(--radius-sm)}
+.card-tag{position:absolute;left:14px;top:14px;background:rgba(243,233,221,.94);color:var(--bordeaux);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:6px 10px;border-radius:var(--radius-sm)}
 .card-body{padding:22px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card-body h3{font-size:1.75rem}
 .card-taste{margin:0;color:var(--ink-soft);font-size:.92rem}
@@ -235,7 +240,7 @@ legend{padding:0;font-weight:600;font-size:.88rem;margin-bottom:10px}
 
 .field{display:grid;gap:8px}
 .field label,.label{font-weight:600;font-size:.88rem}
-.input,textarea.input,select.input{width:100%;min-height:48px;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid rgba(59,36,24,.55);background:#fff;color:var(--choco);transition:border-color .2s,box-shadow .2s}
+.input,textarea.input,select.input{width:100%;min-height:48px;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid rgba(59,36,24,.55);background:#fff;color:var(--choco);transition:border-color .2s}
 .input:focus{outline:none;border-color:var(--bordeaux);box-shadow:0 0 0 3px rgba(90,15,28,.18)}
 textarea.input{min-height:96px;resize:vertical;line-height:1.5}
 .hint{font-size:.8rem;color:var(--ink-soft);margin:0}
@@ -273,7 +278,7 @@ textarea.input{min-height:96px;resize:vertical;line-height:1.5}
 .cart-item .mini-row{grid-column:1/-1;margin-top:6px}
 .contents-list{font-size:.82rem;color:var(--ink-soft);margin:10px 0 0;min-height:1.2em}
 .progress{height:3px;background:rgba(201,162,126,.35);border-radius:2px;overflow:hidden;margin:12px 0 4px}
-.progress span{display:block;height:100%;background:var(--bordeaux);width:0;transition:width .4s var(--ease)}
+.progress span{display:block;height:100%;width:100%;background:var(--bordeaux);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
 
 @media (max-width:1100px){
   .builder{grid-template-columns:1fr 1fr;grid-template-areas:"box box" "palette palette" "side side"}
@@ -306,24 +311,24 @@ textarea.input{min-height:96px;resize:vertical;line-height:1.5}
 .win{position:relative;aspect-ratio:1/1.1;rotate:var(--tilt,0deg);border:0;padding:0;border-radius:var(--radius-sm);background:transparent;perspective:600px;color:var(--cream)}
 .win-inside{position:absolute;inset:0;border-radius:var(--radius-sm);background:var(--cream);color:var(--bordeaux);display:grid;place-items:center;align-content:center;gap:4px;padding:6px;box-shadow:inset 0 3px 10px rgba(30,18,12,.35)}
 .win-inside .bon{width:44%;max-width:42px}
-.win-inside span{font-size:.68rem;font-weight:700;letter-spacing:.06em}
+.win-inside span{font-size:.68rem;font-weight:600;letter-spacing:.06em}
 .win-rim{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none}
 .win-door{position:absolute;inset:0;border-radius:var(--radius-sm);background:linear-gradient(155deg,#73182B,#4F0C19);border:1px solid rgba(201,162,126,.45);display:grid;place-items:center;font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2.2rem);font-weight:400;color:var(--cream);transform-origin:12% 8%;box-shadow:0 8px 16px -10px rgba(0,0,0,.8);transition:border-color .25s,transform .25s}
 .win:not(:disabled):hover .win-door{border-color:var(--gold);transform:translateY(-2px)}
 .win.is-today .win-door{border:1px solid var(--gold);box-shadow:0 0 0 3px rgba(201,162,126,.28),0 8px 16px -10px rgba(0,0,0,.8)}
-.win.is-today .win-door::after{content:"сьогодні";position:absolute;bottom:6px;left:0;right:0;text-align:center;font-family:var(--sans);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.win.is-today .win-door::after{content:"сьогодні";position:absolute;bottom:6px;left:0;right:0;text-align:center;font-family:var(--sans);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold)}
 .win:disabled{cursor:not-allowed}
 .win:disabled .win-door{background:linear-gradient(155deg,#5C1222,#420A16);color:#D9C3B0;border-color:rgba(201,162,126,.22)}
 .win.is-open .win-door{display:none}
 .win.is-open .win-rim{opacity:1}
-.win.tearing .win-door{animation:tear 1s var(--ease) forwards;z-index:3}
+.win.tearing .win-door{animation:tear 1s var(--ease) forwards;z-index:3;clip-path:polygon(0 0,92% 6%,100% 30%,88% 58%,100% 82%,74% 100%,0 96%)}
 .win.tearing .win-rim{opacity:1;transition:opacity .2s .15s}
 @keyframes tear{
   0%{transform:none}
   18%{transform:rotate(-4deg) translate(-2px,-3px)}
-  32%{transform:rotate(3deg) translate(1px,-1px);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
-  55%{transform:rotate(-16deg) translate(-10%,20%);clip-path:polygon(0 0,92% 6%,100% 30%,88% 58%,100% 82%,74% 100%,0 96%);opacity:1}
-  100%{transform:rotate(-42deg) translate(-30%,150%);clip-path:polygon(0 0,92% 6%,100% 30%,88% 58%,100% 82%,74% 100%,0 96%);opacity:0}
+  32%{transform:rotate(3deg) translate(1px,-1px)}
+  55%{transform:rotate(-16deg) translate(-10%,20%);opacity:1}
+  100%{transform:rotate(-42deg) translate(-30%,150%);opacity:0}
 }
 .gift{margin-top:24px;min-height:120px;border:1px solid rgba(201,162,126,.5);border-radius:var(--radius);padding:22px 24px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:rgba(30,18,12,.18)}
 .gift svg{width:42px;height:42px;color:var(--gold)}
@@ -395,7 +400,7 @@ textarea.input{min-height:96px;resize:vertical;line-height:1.5}
 .socials a{display:inline-grid;place-items:center;width:42px;height:42px;border:1px solid rgba(201,162,126,.5);border-radius:var(--radius-sm)}
 .socials svg{width:18px;height:18px;color:var(--gold)}
 .pay{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.pay span{border:1px solid rgba(201,162,126,.5);border-radius:var(--radius-sm);padding:5px 10px;font-size:.75rem;font-weight:700;letter-spacing:.06em;color:#E9D9C6}
+.pay span{border:1px solid rgba(201,162,126,.5);border-radius:var(--radius-sm);padding:5px 10px;font-size:.75rem;font-weight:600;letter-spacing:.06em;color:#E9D9C6}
 .footer-bottom{margin-top:56px;padding-top:22px;border-top:1px solid rgba(201,162,126,.3);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8rem;color:#BFA994}
 @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.footer-grid{grid-template-columns:1fr}}
@@ -420,7 +425,27 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
 .hero-photo,.ph,.holiday-photo,.corp-photo{background:var(--noise),var(--cocoa);background-size:200px 200px,cover}
 .img-failed img{visibility:hidden}
 
-.hero-photo img,.ph img,.holiday-photo img,.corp-photo img,.bon img{filter:saturate(.9) sepia(.12) contrast(1.05)}
+.holiday-photo,.corp-photo{position:relative}
+.hero-photo::after,.ph::after,.holiday-photo::after,.corp-photo::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(90,40,20,.08);pointer-events:none}
+
+/* ---------- mobile perf: suцільний хедер, прості тіні ---------- */
+@media (max-width:900px){
+  .site-header.solid{background:#F3E9DD;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .nav{box-shadow:0 12px 24px -16px rgba(30,18,12,.5)}
+}
+@media (max-width:768px){
+  :root{--shadow-soft:0 10px 20px -12px rgba(30,18,12,.45);--shadow-card:0 6px 16px -10px rgba(30,18,12,.4)}
+  .btn{box-shadow:none}
+  .box{box-shadow:0 14px 24px -14px rgba(30,18,12,.8)}
+  .bon{box-shadow:0 0 0 1.5px var(--gold)}
+  .cup{box-shadow:none}
+  .postcard{box-shadow:inset 0 0 0 1px rgba(201,162,126,.6)}
+  .holiday-photo{box-shadow:0 14px 24px -16px rgba(0,0,0,.7)}
+  .win-door{box-shadow:none}
+  .win.is-today .win-door{box-shadow:0 0 0 3px rgba(201,162,126,.28)}
+  .toast{box-shadow:0 10px 20px -12px rgba(0,0,0,.8)}
+  dialog.cart{box-shadow:0 18px 24px -16px rgba(0,0,0,.6)}
+}
 
 /* ---------- reveal ---------- */
 .motion .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
@@ -491,7 +516,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
   <div class="hero-wrap" id="heroWrap">
     <section class="hero" id="hero" aria-labelledby="heroTitle">
       <div class="hero-photo">
-        <img id="heroImg" src="https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Шоколадні цукерки ручної роботи крупним планом у теплому світлі" fetchpriority="high" decoding="async">
+        <img id="heroImg" src="https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=1600" srcset="https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=400 400w, https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=800 800w, https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w" sizes="100vw" width="1600" height="1065" alt="Шоколадні цукерки ручної роботи в паперових капсулах, вигляд згори" fetchpriority="high" decoding="async">
       </div>
       <svg class="hero-svg" id="heroSvg" aria-hidden="true" focusable="false">
         <defs>
@@ -500,21 +525,8 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
             <stop offset=".55" stop-color="#5A0F1C"/>
             <stop offset="1" stop-color="#3F0914"/>
           </radialGradient>
-          <linearGradient id="flapGrad" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#340610"/>
-            <stop offset=".12" stop-color="#5A0F1C"/>
-            <stop offset=".42" stop-color="#8C2437"/>
-            <stop offset=".62" stop-color="#7A1B2E"/>
-            <stop offset=".9" stop-color="#4E0B19"/>
-            <stop offset="1" stop-color="#3A0711"/>
-          </linearGradient>
-          <filter id="fibers" x="-5%" y="-5%" width="110%" height="110%">
-            <feTurbulence type="fractalNoise" baseFrequency=".55 1.4" numOctaves="3" seed="7" result="t"/>
-            <feDisplacementMap in="SourceGraphic" in2="t" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
-          </filter>
           <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="11"/></filter>
           <filter id="contact" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter>
-          <filter id="flapShadow" x="-40%" y="-20%" width="180%" height="140%"><feDropShadow dx="9" dy="7" stdDeviation="7" flood-color="#14060A" flood-opacity=".55"/><feDropShadow dx="2" dy="1" stdDeviation="1.2" flood-color="#14060A" flood-opacity=".4"/></filter>
           <mask id="holeMask" maskUnits="userSpaceOnUse">
             <rect id="maskRect" x="0" y="0" width="100" height="100" fill="#fff"/>
             <path id="holeM" fill="#000"/>
@@ -526,11 +538,25 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
           <path id="holeShadow" fill="none" stroke="#0E0705" stroke-opacity=".6" stroke-width="34" filter="url(#soft)"/>
           <path id="holeShadow2" fill="none" stroke="#0E0705" stroke-opacity=".5" stroke-width="7" filter="url(#contact)"/>
         </g>
-        <g id="fiberG" filter="url(#fibers)">
+        <g id="fiberG">
           <path id="fiberA" fill="#F3E9DD" fill-opacity=".42" fill-rule="evenodd"/>
           <path id="fiberB" fill="#F3E9DD" fill-opacity=".5" fill-rule="evenodd"/>
         </g>
-        <g id="flapG"><path id="flap" fill="url(#flapGrad)" filter="url(#flapShadow)"/><path id="flapFiber" fill="none" stroke="#F3E9DD" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round" filter="url(#fibers)"/></g>
+      </svg>
+      <svg class="hero-svg hero-flap" id="flapSvg" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="flapGrad" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#340610"/>
+            <stop offset=".12" stop-color="#5A0F1C"/>
+            <stop offset=".42" stop-color="#8C2437"/>
+            <stop offset=".62" stop-color="#7A1B2E"/>
+            <stop offset=".9" stop-color="#4E0B19"/>
+            <stop offset="1" stop-color="#3A0711"/>
+          </linearGradient>
+          <filter id="flapShadow" x="-40%" y="-20%" width="180%" height="140%"><feDropShadow dx="9" dy="7" stdDeviation="7" flood-color="#14060A" flood-opacity=".55"/></filter>
+        </defs>
+        <path id="flap" fill="url(#flapGrad)" filter="url(#flapShadow)"/>
+        <path id="flapFiber" fill="none" stroke="#F3E9DD" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
       <div class="hero-content" id="heroContent">
         <p class="hero-kicker">Авторські цукерки · сезон 2026</p>
@@ -670,7 +696,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
         <p class="lead">Щодня до Святвечора — маленький подарунок від ательє. Відкривайте віконце дня: папір рветься, а всередині — сюрприз.</p>
       </div>
       <figure class="holiday-photo reveal">
-        <img loading="lazy" src="https://images.pexels.com/photos/1839882/pexels-photo-1839882.jpeg?auto=compress&cs=tinysrgb&w=1200" width="1200" height="1500" alt="Святкова чашка гарячого шоколаду в теплому зимовому світлі">
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/1839882/pexels-photo-1839882.jpeg?auto=compress&cs=tinysrgb&w=800" srcset="https://images.pexels.com/photos/1839882/pexels-photo-1839882.jpeg?auto=compress&cs=tinysrgb&w=400 400w, https://images.pexels.com/photos/1839882/pexels-photo-1839882.jpeg?auto=compress&cs=tinysrgb&w=800 800w, https://images.pexels.com/photos/1839882/pexels-photo-1839882.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w" sizes="(max-width:900px) calc(100vw - 40px), 40vw" width="1200" height="800" alt="Чашка гарячого шоколаду з маршмелоу й вафельні трубочки">
       </figure>
       <div class="holiday-cal reveal d1">
         <div class="advent" id="advent" role="group" aria-label="Адвент-календар"></div>
@@ -690,7 +716,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
   <section class="section light" id="corporate" aria-labelledby="corpTitle">
     <div class="container corp-grid">
       <div class="corp-photo reveal">
-        <img loading="lazy" src="https://images.pexels.com/photos/19512542/pexels-photo-19512542.jpeg?auto=compress&cs=tinysrgb&w=1400" width="1400" height="1120" alt="Подарункова коробка з асорті шоколадних цукерок">
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/19512542/pexels-photo-19512542.jpeg?auto=compress&cs=tinysrgb&w=800" srcset="https://images.pexels.com/photos/19512542/pexels-photo-19512542.jpeg?auto=compress&cs=tinysrgb&w=400 400w, https://images.pexels.com/photos/19512542/pexels-photo-19512542.jpeg?auto=compress&cs=tinysrgb&w=800 800w, https://images.pexels.com/photos/19512542/pexels-photo-19512542.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w" sizes="(max-width:900px) calc(100vw - 40px), 45vw" width="1400" height="2173" alt="Подарункова коробка з шоколадними цукерками у висувній шухляді">
       </div>
       <div class="reveal d1">
         <p class="eyebrow">Корпоративним клієнтам</p>
@@ -850,14 +876,16 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
   /* ---------------- data ---------------- */
   const TYPE_LABEL = { dark: 'Темний', milk: 'Молочний', white: 'Білий', nut: 'Горіхові' };
   const CANDIES = [
-    { id: 'cherry',    name: 'Темна вишня',        taste: '70% какао, вишня в бренді, какао-крупка',      price: 58, types: ['dark'],         img: 'https://images.pexels.com/photos/918328/pexels-photo-918328.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Темна вишня»: темний шоколад з вишнею, крупний план' },
-    { id: 'caramel',   name: 'Солона карамель',    taste: 'молочний 38%, тягуча карамель і флер-де-сель',  price: 52, types: ['milk'],         img: 'https://images.pexels.com/photos/6213662/pexels-photo-6213662.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Солона карамель»: молочний шоколад з карамеллю, крупний план' },
-    { id: 'praline',   name: 'Фундук-праліне',     taste: 'хрусткий праліне з карамелізованим фундуком',   price: 55, types: ['milk', 'nut'],  img: 'https://images.pexels.com/photos/7625247/pexels-photo-7625247.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Фундук-праліне»: молочний шоколад з фундуком, крупний план' },
-    { id: 'raspberry', name: 'Біла малина',        taste: 'білий шоколад, сублімована малина, ваніль',      price: 54, types: ['white'],        img: 'https://images.pexels.com/photos/10189142/pexels-photo-10189142.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Біла малина»: білий шоколад з малиною, крупний план' },
-    { id: 'almond',    name: 'Мигдаль і апельсин', taste: 'темний 64%, смажений мигдаль, цукати цедри',     price: 56, types: ['dark', 'nut'],  img: 'https://images.pexels.com/photos/6261618/pexels-photo-6261618.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Мигдаль і апельсин»: темний шоколад з мигдалем і цедрою, крупний план' },
-    { id: 'truffle',   name: 'Класичний трюфель',  taste: 'вершковий ганаш, обкатаний у какао-пудрі',       price: 50, types: ['dark'],         img: 'https://images.pexels.com/photos/10167723/pexels-photo-10167723.jpeg?auto=compress&cs=tinysrgb&w=800', alt: '«Класичний трюфель» у какао-пудрі, крупний план' }
+    { id: 'cherry',    name: 'Темна вишня',        taste: '70% какао, вишня в бренді, какао-крупка',      price: 58, types: ['dark'],         img: 918328, alt: 'Шматочки темного шоколаду зі свіжою малиною на темному тлі' },
+    { id: 'caramel',   name: 'Солона карамель',    taste: 'молочний 38%, тягуча карамель і флер-де-сель',  price: 52, types: ['milk'],         img: 15550424, alt: 'Шоколадні цукерки в паперових капсулах на темній дошці, вигляд згори' },
+    { id: 'praline',   name: 'Фундук-праліне',     taste: 'хрусткий праліне з карамелізованим фундуком',   price: 55, types: ['milk', 'nut'],  img: 7625247, alt: 'Стос шоколадних плиток із цілими горіхами' },
+    { id: 'raspberry', name: 'Біла малина',        taste: 'білий шоколад, сублімована малина, ваніль',      price: 54, types: ['white'],        img: 10189142, alt: 'Білий шоколад із малиною та мигдалем, складений стосом' },
+    { id: 'almond',    name: 'Мигдаль і апельсин', taste: 'темний 64%, смажений мигдаль, цукати цедри',     price: 56, types: ['dark', 'nut'],  img: 6261618, alt: 'Плитки темного шоколаду й шоколадна стружка на какао' },
+    { id: 'truffle',   name: 'Класичний трюфель',  taste: 'вершковий ганаш, обкатаний у какао-пудрі',       price: 50, types: ['dark'],         img: 6213662, alt: 'Шоколадні трюфелі в какао-пудрі на білій тарілці' }
   ];
-  const bonHTML = (c, cls = '') => `<span class="bon${cls}" aria-hidden="true"><img src="${c.img.replace('w=800', 'w=240')}" alt="" loading="lazy" decoding="async"></span>`;
+  const px = (id, w) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+  const pxSet = id => [400, 800, 1600].map(w => `${px(id, w)} ${w}w`).join(', ');
+  const bonHTML = c => `<span class="bon" aria-hidden="true"><img src="${px(c.img, 200)}" width="72" height="72" alt="" loading="lazy" decoding="async"></span>`;
   const miniRow = ids => ids.filter(id => byId[id]).map(id => bonHTML(byId[id])).join('');
   const esc = t => String(t).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
   const byId = Object.fromEntries(CANDIES.map(c => [c.id, c]));
@@ -874,10 +902,11 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
   /* ---------------- header & nav ---------------- */
   const header = $('.site-header'), heroWrap = $('#heroWrap');
   const burger = $('#burger'), nav = $('#nav');
-  function headerState() {
-    const end = heroWrap.offsetTop + heroWrap.offsetHeight - header.offsetHeight - 10;
-    header.classList.toggle('solid', window.scrollY > end || nav.classList.contains('open'));
-  }
+  let pastHero = false;
+  function headerState() { header.classList.toggle('solid', pastHero || nav.classList.contains('open')); }
+  // без читання розмітки на кожен scroll: хедер стає суцільним, коли hero виходить з-під нього
+  new IntersectionObserver(([en]) => { pastHero = !en.isIntersecting; headerState(); },
+    { rootMargin: `-${header.offsetHeight + 10}px 0px 0px 0px` }).observe(heroWrap);
   burger.addEventListener('click', () => {
     const open = !nav.classList.contains('open');
     nav.classList.toggle('open', open);
@@ -888,16 +917,17 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
   nav.addEventListener('click', e => { if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Відкрити меню'); headerState(); } });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { burger.click(); burger.focus(); } });
 
-  /* ---------------- hero: torn paper ---------------- */
+  /* ---------------- hero: torn paper ----------------
+     Форма отвору будується один раз (і при зміні ширини вікна) як статичний SVG path.
+     Під час скролу змінюються лише transform: scale() та opacity — без перебудови маски. */
   const hero = {
-    svg: $('#heroSvg'), sec: $('#hero'), img: $('#heroImg'), content: $('#heroContent'),
+    svg: $('#heroSvg'), flapSvg: $('#flapSvg'), sec: $('#hero'), img: $('#heroImg'), content: $('#heroContent'),
     maskRect: $('#maskRect'), paper: $('#paper'), holeM: $('#holeM'), holeC: $('#holeC'),
-    shadow: $('#holeShadow'), shadow2: $('#holeShadow2'), fibA: $('#fiberA'), fibB: $('#fiberB'), flap: $('#flap'), flapG: $('#flapG'), flapFiber: $('#flapFiber'),
-    w: 0, h: 0, cx: 0, cy: 0, sMax: 3
+    shadow: $('#holeShadow'), shadow2: $('#holeShadow2'), fibA: $('#fiberA'), fibB: $('#fiberB'), flap: $('#flap'), flapFiber: $('#flapFiber'),
+    w: 0, h: 0, cx: 0, cy: 0, sMax: 3, span: 1, animated: false, live: false
   };
   function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
   const HN = 360;
-  // періодичний value-noise з косинусною інтерполяцією: freq хвиль на коло
   function waveNoise(r, freq) {
     const vals = Array.from({ length: freq }, () => r() * 2 - 1);
     return Array.from({ length: HN }, (_, i) => {
@@ -906,23 +936,22 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
       return vals[i0] * (1 - u) + vals[i1] * u;
     });
   }
+  const toD = pts => 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L') + 'Z';
   function buildHero() {
     const w = hero.sec.clientWidth, h = hero.sec.clientHeight;
     hero.w = w; hero.h = h;
-    hero.svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    [hero.svg, hero.flapSvg].forEach(el => el.setAttribute('viewBox', `0 0 ${w} ${h}`));
     [hero.maskRect, hero.paper].forEach(el => { el.setAttribute('width', w); el.setAttribute('height', h); });
     const narrow = w < 640;
-    // вільне місце між хедером і заголовком; отвір — не більше ~55% висоти екрана
     const top = header.offsetHeight + (narrow ? 16 : 24);
     const bottom = Math.max(top + 140, hero.content.offsetTop - (narrow ? 22 : 34));
     const avail = Math.min(bottom - top, h * 0.55);
     const r = rng(41);
     const mid = waveNoise(r, 9), small = waveNoise(r, 27), fine = waveNoise(r, 90);
     const fw1 = waveNoise(r, 9), fw2 = waveNoise(r, 37);
-    // 6 великих несиметричних виступів (+) і заглибин (−): [кут, амплітуда, ширина]
     const BUMPS = [[-2.5, .10, .42], [-1.45, -.13, .30], [-0.5, .07, .30], [0.85, -.06, .30], [1.8, .13, .40], [2.75, -.09, .28]];
-    const CUT = 0.8; // лінія загину праворуч
-    const unit = [], fiber = [];
+    const CUT = 0.8;
+    const unit = [], fiber = [], jit = [];
     let cTop = Infinity, cBot = -Infinity, yMin = Infinity, yMax = -Infinity;
     for (let i = 0; i < HN; i++) {
       const t = (i / HN) * Math.PI * 2 - Math.PI;
@@ -933,15 +962,33 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
       if (ux > CUT) { ux = CUT + (r() - 0.5) * 0.003; cTop = Math.min(cTop, uy); cBot = Math.max(cBot, uy); }
       yMin = Math.min(yMin, uy); yMax = Math.max(yMax, uy);
       unit.push([ux, uy]);
-      fiber.push(Math.max(3, Math.min(6, 4.5 + 1.1 * fw1[i] + 0.6 * fw2[i] + (r() - 0.5) * 0.5)));
+      fiber.push(Math.max(3, Math.min(6, 4.5 + 1.1 * fw1[i] + 0.6 * fw2[i])));
+      jit.push((r() - 0.5) * 1.8); // «волокнистість» краю замість feDisplacementMap
     }
     const rx = Math.min(w * (narrow ? 0.37 : 0.38), 660);
     const ry = Math.min(avail / (yMax - yMin), rx * (narrow ? 0.72 : 0.42));
     const cx = w / 2 - rx * 0.05;
     const cy = top + (bottom - top) / 2 - ((yMin + yMax) / 2) * ry;
-    Object.assign(hero, { cx, cy, rx, ry, unit, fiber });
+    Object.assign(hero, { cx, cy });
 
-    // загнутий край: виходить із лінії загину, торці — продовження рваного краю
+    // статичні контури: отвір, тінь, волокниста смужка
+    const inner = unit.map(([ux, uy]) => [cx + ux * rx, cy + uy * ry]);
+    const outA = [], outB = [];
+    for (let i = 0; i < HN; i++) {
+      const pt = inner[i], a = inner[(i - 1 + HN) % HN], b = inner[(i + 1) % HN];
+      let nx = b[1] - a[1], ny = -(b[0] - a[0]);
+      const len = Math.hypot(nx, ny) || 1; nx /= len; ny /= len;
+      if (nx * (pt[0] - cx) + ny * (pt[1] - cy) < 0) { nx = -nx; ny = -ny; }
+      const fa = Math.max(2.5, fiber[i] + jit[i]), fb = fiber[i] * 0.55 + jit[i] * 0.4;
+      outA.push([pt[0] + nx * fa, pt[1] + ny * fa]);
+      outB.push([pt[0] + nx * fb, pt[1] + ny * fb]);
+    }
+    const dIn = toD(inner), dInRev = toD(inner.slice().reverse());
+    [hero.holeM, hero.holeC, hero.shadow, hero.shadow2].forEach(el => el.setAttribute('d', dIn));
+    hero.fibA.setAttribute('d', toD(outA) + dInRev);
+    hero.fibB.setAttribute('d', toD(outB) + dInRev);
+
+    // загнутий край
     const xL = cx + CUT * rx - 1.5;
     const W = rx * (narrow ? 0.17 : 0.12);
     const yT = cy + cTop * ry - ry * 0.05, yB = cy + cBot * ry + ry * 0.05;
@@ -953,63 +1000,58 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
     }
     const P = pt => pt[0].toFixed(1) + ' ' + pt[1].toFixed(1);
     const end = topPts[n], endB = botPts[n];
-    let f = 'M' + topPts.map(P).join('L');
-    f += `Q${(xL + W * 1.22).toFixed(1)} ${((end[1] + endB[1]) / 2).toFixed(1)} ${P(endB)}`;
-    f += 'L' + botPts.slice().reverse().map(P).join('L') + 'Z';
-    hero.flap.setAttribute('d', f);
+    hero.flap.setAttribute('d', 'M' + topPts.map(P).join('L') + `Q${(xL + W * 1.22).toFixed(1)} ${((end[1] + endB[1]) / 2).toFixed(1)} ${P(endB)}` + 'L' + botPts.slice().reverse().map(P).join('L') + 'Z');
     hero.flapFiber.setAttribute('d', 'M' + topPts.map(P).join('L') + 'M' + botPts.map(P).join('L'));
 
+    // точка масштабування — центр отвору
+    const origin = `${cx.toFixed(1)}px ${cy.toFixed(1)}px`;
+    hero.svg.style.transformOrigin = origin; hero.flapSvg.style.transformOrigin = origin;
     const dx = Math.max(cx, w - cx) + 40, dy = Math.max(cy, h - cy) + 40;
     hero.sMax = Math.sqrt((dx / (rx * 0.62)) ** 2 + (dy / (ry * 0.7)) ** 2) * 0.75;
+
+    // на телефонах і при reduced-motion — статичний hero
+    hero.animated = !RM && w >= 768;
+    document.documentElement.classList.toggle('hero-static', !hero.animated);
+    hero.span = Math.max(1, heroWrap.offsetHeight - h);
     updateHero();
-  }
-  const toD = pts => 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L') + 'Z';
-  function edge(s) {
-    const { cx, cy, rx, ry, unit, fiber } = hero;
-    const inner = unit.map(([ux, uy]) => [cx + ux * rx * s, cy + uy * ry * s]);
-    const outA = [], outB = [];
-    for (let i = 0; i < HN; i++) {
-      const p = inner[i], a = inner[(i - 1 + HN) % HN], b = inner[(i + 1) % HN];
-      let nx = b[1] - a[1], ny = -(b[0] - a[0]);
-      const len = Math.hypot(nx, ny) || 1; nx /= len; ny /= len;
-      if (nx * (p[0] - cx) + ny * (p[1] - cy) < 0) { nx = -nx; ny = -ny; }
-      outA.push([p[0] + nx * fiber[i], p[1] + ny * fiber[i]]);
-      outB.push([p[0] + nx * fiber[i] * 0.55, p[1] + ny * fiber[i] * 0.55]);
-    }
-    return { inner, outA, outB };
   }
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   function updateHero() {
-    if (!hero.unit) return;
-    let p = 0;
-    if (!RM) {
-      const rect = heroWrap.getBoundingClientRect();
-      const span = heroWrap.offsetHeight - hero.h;
-      p = span > 0 ? clamp(-rect.top / span) : 0;
+    if (!hero.animated) {
+      [hero.svg, hero.flapSvg, hero.img, hero.content].forEach(el => { el.style.transform = ''; el.style.opacity = ''; });
+      hero.content.style.visibility = '';
+      return;
     }
-    const e = ease(p);
-    const s = 1 + (hero.sMax - 1) * e;
-    const { inner, outA, outB } = edge(s);
-    const dIn = toD(inner), dInRev = toD(inner.slice().reverse());
-    [hero.holeM, hero.holeC, hero.shadow, hero.shadow2].forEach(el => el.setAttribute('d', dIn));
-    hero.fibA.setAttribute('d', toD(outA) + dInRev);
-    hero.fibB.setAttribute('d', toD(outB) + dInRev);
-    hero.flapG.setAttribute('transform', `translate(${hero.cx} ${hero.cy}) scale(${s}) translate(${-hero.cx} ${-hero.cy})`);
-    hero.flapG.style.opacity = clamp(1 - p * 2.4);
+    const p = clamp(window.scrollY / hero.span);
+    const e = ease(p), s = 1 + (hero.sMax - 1) * e;
+    hero.svg.style.transform = `scale(${s.toFixed(4)})`;
+    hero.flapSvg.style.transform = `scale(${s.toFixed(4)})`;
+    hero.flapSvg.style.opacity = clamp(1 - p * 2.4).toFixed(3);
     hero.img.style.transform = `scale(${(1.12 - 0.12 * e).toFixed(4)})`;
     const c = clamp(1 - (p - 0.08) / 0.32);
-    hero.content.style.opacity = c;
-    hero.content.style.transform = `translateY(${(1 - c) * -24}px)`;
+    hero.content.style.opacity = c.toFixed(3);
+    hero.content.style.transform = `translateY(${((1 - c) * -24).toFixed(1)}px)`;
     hero.content.style.visibility = c < 0.02 ? 'hidden' : '';
   }
+  // слухаємо scroll тільки поки hero на екрані; will-change — лише на цей час
   let ticking = false;
-  function onScroll() {
-    if (ticking) return; ticking = true;
-    requestAnimationFrame(() => { updateHero(); headerState(); ticking = false; });
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  let rT; window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(() => { buildHero(); headerState(); }, 120); });
+  window.addEventListener('scroll', () => {
+    if (!hero.animated || !hero.live || ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; updateHero(); });
+  }, { passive: true });
+  new IntersectionObserver(([en]) => {
+    hero.live = en.isIntersecting;
+    hero.sec.classList.toggle('hero-live', hero.live && hero.animated);
+    if (hero.animated) updateHero();
+  }).observe(heroWrap);
+  let lastW = window.innerWidth, rT;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === lastW) return; // мобільний адресний рядок змінює лише висоту — не перебудовуємо
+    lastW = window.innerWidth;
+    clearTimeout(rT); rT = setTimeout(buildHero, 150);
+  });
   mq.addEventListener?.('change', ev => { RM = ev.matches; document.documentElement.classList.toggle('motion', !RM); buildHero(); revealAll(); });
 
   /* ---------------- collection ---------------- */
@@ -1017,7 +1059,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
   cardsEl.innerHTML = CANDIES.map((c, i) => `
     <article class="card reveal d${i % 3}" data-types="${c.types.join(' ')}">
       <figure class="ph">
-        <img loading="lazy" decoding="async" src="${c.img}" width="800" height="800" alt="${c.alt}">
+        <img loading="lazy" decoding="async" src="${px(c.img, 800)}" srcset="${pxSet(c.img)}" sizes="(max-width:560px) calc(100vw - 40px), (max-width:980px) calc(50vw - 50px), 380px" width="800" height="800" alt="${c.alt}">
         <span class="card-tag">${c.types.map(t => TYPE_LABEL[t]).join(' · ')}</span>
       </figure>
       <div class="card-body">
@@ -1059,29 +1101,34 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
       <span class="pick-price">${c.price} ₴</span>
     </button></li>`).join('');
 
-  function renderBox(opts = {}) {
+  // сітка будується лише при зміні розміру; далі оновлюється тільки змінена комірка
+  function buildGrid() {
     grid.style.setProperty('--cols', COLS[state.size]);
-    grid.innerHTML = state.cells.map((id, i) => {
-      const c = id && byId[id];
-      const cls = ['cell', c ? 'filled' : '', opts.landing === i ? 'landing' : '', opts.pop === i ? 'pop' : ''].join(' ');
-      return c
-        ? `<button type="button" class="${cls}" data-cell="${i}" aria-label="Комірка ${i + 1}: ${c.name}. Натисніть, щоб прибрати"><span class="cup"></span>${bonHTML(c)}</button>`
-        : `<button type="button" class="${cls}" data-cell="${i}" disabled aria-label="Комірка ${i + 1}: порожня"><span class="cup"></span><span class="num" aria-hidden="true">${i + 1}</span></button>`;
-    }).join('');
+    grid.innerHTML = state.cells.map((_, i) => `<button type="button" class="cell" data-cell="${i}"></button>`).join('');
+    state.cells.forEach((_, i) => paintCell(i));
     renderSummary();
   }
+  function paintCell(i, mode = '') {
+    const el = grid.children[i]; if (!el) return;
+    const c = state.cells[i] && byId[state.cells[i]];
+    el.className = 'cell' + (c ? ' filled' : '') + (mode ? ' ' + mode : '');
+    el.disabled = !c;
+    el.setAttribute('aria-label', c ? `Комірка ${i + 1}: ${c.name}. Натисніть, щоб прибрати` : `Комірка ${i + 1}: порожня`);
+    el.innerHTML = c ? `<span class="cup"></span>${bonHTML(c)}` : `<span class="cup"></span><span class="num" aria-hidden="true">${i + 1}</span>`;
+  }
+  function resetBox() { state.cells.fill(null); state.cells.forEach((_, i) => paintCell(i)); renderSummary(); }
   function filledCount() { return state.cells.filter(Boolean).length; }
   function renderSummary() {
     const n = filledCount(), size = state.size, left = size - n;
     $('#boxCount').innerHTML = `<b>${n}</b> / ${size} <span>цукерок</span>`;
-    $('#progressBar').style.width = `${(n / size) * 100}%`;
+    $('#progressBar').style.transform = `scaleX(${n / size})`;
     const candiesSum = state.cells.reduce((s, id) => s + (id ? byId[id].price : 0), 0);
     $('#sumBox').textContent = `на ${size} · ${uah(BOX_PRICE[size])}`;
     $('#sumCandies').textContent = uah(candiesSum);
     $('#sumTotal').textContent = uah(BOX_PRICE[size] + candiesSum);
     const counts = {};
     state.cells.forEach(id => { if (id) counts[id] = (counts[id] || 0) + 1; });
-    $('#miniRow').innerHTML = miniRow(state.cells);
+    syncMiniRow();
     $('#contents').textContent = Object.keys(counts).length
       ? Object.entries(counts).map(([id, k]) => `${byId[id].name} × ${k}`).join(' · ')
       : 'Коробка поки порожня.';
@@ -1093,6 +1140,17 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
       : `Залишилось заповнити ${left} ${plural(left, 'комірку', 'комірки', 'комірок')}.`;
   }
 
+  const miniEl = $('#miniRow');
+  function syncMiniRow() {
+    const ids = state.cells.filter(Boolean), kids = miniEl.children;
+    ids.forEach((id, k) => {
+      if (kids[k] && kids[k].dataset.id === id) return;
+      const wrap = document.createElement('template'); wrap.innerHTML = bonHTML(byId[id]);
+      const node = wrap.content.firstElementChild; node.dataset.id = id;
+      kids[k] ? miniEl.replaceChild(node, kids[k]) : miniEl.appendChild(node);
+    });
+    while (kids.length > ids.length) miniEl.lastElementChild.remove();
+  }
   function inView(el) {
     const r = el.getBoundingClientRect();
     return r.bottom > 0 && r.top < window.innerHeight;
@@ -1103,7 +1161,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
     const size = b.width * 0.68;
     const g = document.createElement('span');
     g.className = 'bon flyer';
-    g.innerHTML = `<img src="${byId[id].img.replace('w=800', 'w=240')}" alt="">`;
+    g.innerHTML = `<img src="${px(byId[id].img, 200)}" width="72" height="72" alt="" decoding="async">`;
     Object.assign(g.style, { position: 'fixed', left: `${b.left + (b.width - size) / 2}px`, top: `${b.top + (b.height - size) / 2}px`, width: `${size}px`, zIndex: 90, pointerEvents: 'none' });
     document.body.appendChild(g);
     const dx = (a.left + a.width / 2) - (b.left + b.width / 2);
@@ -1125,7 +1183,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
     }
     state.cells[idx] = id;
     const animate = !RM && srcEl && inView(grid);
-    renderBox({ landing: animate ? idx : -1 });
+    paintCell(idx, animate ? 'landing' : ''); renderSummary();
     const cell = grid.querySelector(`[data-cell="${idx}"]`);
     if (animate) {
       fly(srcEl.querySelector('.bon') || srcEl, cell, id).then(() => {
@@ -1145,7 +1203,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
     const b = e.target.closest('.cell.filled'); if (!b) return;
     const i = +b.dataset.cell, name = byId[state.cells[i]].name;
     const done = () => {
-      state.cells[i] = null; renderBox();
+      state.cells[i] = null; paintCell(i); renderSummary();
       // фокус лишаємо поруч: на наступну заповнену комірку або на палітру
       const target = grid.querySelector('.cell.filled') || picks.querySelector('.pick');
       target?.focus({ preventScroll: true });
@@ -1160,21 +1218,21 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
     const dropped = Math.max(0, kept.length - size);
     state.size = size;
     state.cells = Array.from({ length: size }, (_, i) => kept[i] || null);
-    renderBox();
+    buildGrid();
     if (dropped) toast(`Коробка менша — ${dropped} ${plural(dropped, 'цукерку', 'цукерки', 'цукерок')} прибрано`);
   });
   $('#randomBtn').addEventListener('click', () => {
     const empty = state.cells.map((v, i) => v ? -1 : i).filter(i => i >= 0);
     if (!empty.length) { toast('Коробка вже повна'); return; }
-    empty.forEach(i => { state.cells[i] = CANDIES[Math.floor(Math.random() * CANDIES.length)].id; });
-    renderBox();
+    empty.forEach(i => { state.cells[i] = CANDIES[Math.floor(Math.random() * CANDIES.length)].id; paintCell(i); });
+    renderSummary();
     if (!RM) empty.forEach((i, k) => {
       const c = grid.querySelector(`[data-cell="${i}"] .bon`);
       c?.animate([{ transform: 'scale(.2) translateY(-40%)', opacity: 0 }, { transform: 'scale(1.08)', opacity: 1, offset: .7 }, { transform: 'scale(1)', opacity: 1 }], { duration: 420, delay: k * 45, easing: 'cubic-bezier(.3,.7,.25,1)', fill: 'backwards' });
     });
     toast('Готово! Заповнили випадковим асорті');
   });
-  $('#clearBtn').addEventListener('click', () => { state.cells = Array(state.size).fill(null); renderBox(); toast('Коробку очищено'); });
+  $('#clearBtn').addEventListener('click', () => { resetBox(); toast('Коробку очищено'); });
 
   // листівка
   const cardText = $('#cardText'), cardPreview = $('#cardPreview');
@@ -1244,7 +1302,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
     store.set('oksamyt-cart', cart); renderCart();
     const c = $('#cartCount'); c.classList.remove('bump'); void c.offsetWidth; if (!RM) c.classList.add('bump');
     toast('Коробку додано в кошик');
-    state.cells = Array(state.size).fill(null); renderBox();
+    resetBox();
   });
 
   /* ---------------- advent ---------------- */
@@ -1371,7 +1429,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
   } else revealAll();
 
   /* ---------------- init ---------------- */
-  renderBox(); syncDate(); renderCart(); buildHero(); headerState();
+  buildGrid(); syncDate(); renderCart(); buildHero(); headerState();
   document.fonts?.ready.then(() => { buildHero(); });
 })();
 </script>
