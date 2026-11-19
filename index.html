@@ -123,6 +123,22 @@ em,.it{font-style:italic}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;transform:scale(1.12)}
 .hero-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .hero-flap{z-index:1}
+.hero-layer{position:absolute;z-index:1;pointer-events:none;max-width:none;user-select:none}
+#paperImg{left:0;top:0;width:100%;height:100%}
+.hero-paper,.hero-svg{transform-origin:var(--ho,50% 40%)}
+.hero-live .hero-layer{will-change:transform,opacity}
+/* scroll-driven: анімацію веде браузер, без JS на кожному кадрі */
+@supports (animation-timeline: scroll()){
+  .hero-sd:not(.hero-static) .hero-paper,
+  .hero-sd:not(.hero-static) .hero-flapl{animation:heroOpen linear both;animation-timeline:scroll(root);animation-range:0px var(--hero-span,120vh);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+  .hero-sd:not(.hero-static) .hero-flapl{animation-name:heroOpen,heroFlapFade;animation-timing-function:cubic-bezier(.65,0,.35,1),linear;animation-range:0px var(--hero-span,120vh),0px calc(var(--hero-span,120vh) * .42)}
+  .hero-sd:not(.hero-static) .hero-photo img{animation:heroPhoto linear both;animation-timeline:scroll(root);animation-range:0px var(--hero-span,120vh);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+  .hero-sd:not(.hero-static) .hero-content{animation:heroText linear both;animation-timeline:scroll(root);animation-range:0px var(--hero-span,120vh)}
+}
+@keyframes heroOpen{from{transform:scale(1)}to{transform:scale(var(--hero-smax,4))}}
+@keyframes heroFlapFade{from{opacity:1}to{opacity:0}}
+@keyframes heroPhoto{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes heroText{0%,8%{opacity:1;transform:none;visibility:visible}39%{visibility:visible}40%,100%{opacity:0;transform:translateY(-24px);visibility:hidden}}
 .hero-live .hero-photo img,.hero-live .hero-svg,.hero-live .hero-content{will-change:transform,opacity}
 .hero-static .hero-wrap{height:auto}
 .hero-static .hero{position:relative}
@@ -518,7 +534,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
       <div class="hero-photo">
         <img id="heroImg" src="https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=1600" srcset="https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=400 400w, https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=800 800w, https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w" sizes="100vw" width="1600" height="1065" alt="Шоколадні цукерки ручної роботи в паперових капсулах, вигляд згори" fetchpriority="high" decoding="async">
       </div>
-      <svg class="hero-svg" id="heroSvg" aria-hidden="true" focusable="false">
+      <svg class="hero-svg hero-paper" id="heroSvg" aria-hidden="true" focusable="false">
         <defs>
           <radialGradient id="paperGrad" cx="50%" cy="42%" r="75%">
             <stop offset="0" stop-color="#6A1424"/>
@@ -543,7 +559,7 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
           <path id="fiberB" fill="#F3E9DD" fill-opacity=".5" fill-rule="evenodd"/>
         </g>
       </svg>
-      <svg class="hero-svg hero-flap" id="flapSvg" aria-hidden="true" focusable="false">
+      <svg class="hero-svg hero-flap hero-flapl" id="flapSvg" aria-hidden="true" focusable="false">
         <defs>
           <linearGradient id="flapGrad" x1="0" x2="1" y1="0" y2="0">
             <stop offset="0" stop-color="#340610"/>
@@ -558,6 +574,8 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
         <path id="flap" fill="url(#flapGrad)" filter="url(#flapShadow)"/>
         <path id="flapFiber" fill="none" stroke="#F3E9DD" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
+      <img class="hero-layer hero-paper" id="paperImg" alt="" aria-hidden="true" decoding="async" hidden>
+      <img class="hero-layer hero-flapl" id="flapImg" alt="" aria-hidden="true" decoding="async" hidden>
       <div class="hero-content" id="heroContent">
         <p class="hero-kicker">Авторські цукерки · сезон 2026</p>
         <h1 id="heroTitle">Час для чогось теплого</h1>
@@ -1005,46 +1023,103 @@ dialog.cart::backdrop{background:rgba(30,18,12,.55)}
 
     // точка масштабування — центр отвору
     const origin = `${cx.toFixed(1)}px ${cy.toFixed(1)}px`;
-    hero.svg.style.transformOrigin = origin; hero.flapSvg.style.transformOrigin = origin;
+    hero.sec.style.setProperty('--ho', origin);
     const dx = Math.max(cx, w - cx) + 40, dy = Math.max(cy, h - cy) + 40;
-    hero.sMax = Math.sqrt((dx / (rx * 0.62)) ** 2 + (dy / (ry * 0.7)) ** 2) * 0.75;
+    hero.sMax = Math.sqrt((dx / (rx * 0.62)) ** 2 + (dy / (ry * 0.7)) ** 2) * 0.95;
+    hero.span = Math.max(1, heroWrap.offsetHeight - h);
+    hero.sec.style.setProperty('--hero-smax', hero.sMax.toFixed(3));
+    document.documentElement.style.setProperty('--hero-span', hero.span + 'px');
 
-    // статичний hero лише при prefers-reduced-motion; на телефонах анімація теж дешева — тільки transform/opacity
     hero.animated = !RM;
     document.documentElement.classList.toggle('hero-static', !hero.animated);
-    hero.span = Math.max(1, heroWrap.offsetHeight - h);
+    // папір з отвором «запікаємо» в звичайну картинку: масштабування bitmap —
+    // найдешевша операція для GPU, без перерахунку SVG-маски й розмиття на кожному кадрі
+    showSvgLayers();
     updateHero();
+    const token = ++hero.build;
+    (window.requestIdleCallback || (f => setTimeout(f, 60)))(() => bakeHero(token, w, h, { cx, cy }));
   }
+  hero.build = 0; hero.urls = [];
+  const paperImg = $('#paperImg'), flapImg = $('#flapImg');
+  hero.paperEl = hero.svg; hero.flapEl = hero.flapSvg;
+  function showSvgLayers() {
+    hero.svg.style.display = ''; hero.flapSvg.style.display = '';
+    paperImg.hidden = true; flapImg.hidden = true;
+    hero.paperEl = hero.svg; hero.flapEl = hero.flapSvg;
+  }
+  async function svgToURL(svgEl, vb, outW, outH, dpr) {
+    const clone = svgEl.cloneNode(true);
+    clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    clone.setAttribute('viewBox', vb.join(' '));
+    clone.setAttribute('width', outW); clone.setAttribute('height', outH);
+    clone.removeAttribute('class'); clone.removeAttribute('style');
+    const im = new Image();
+    im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+    await im.decode();
+    const cv = document.createElement('canvas');
+    cv.width = Math.round(outW * dpr); cv.height = Math.round(outH * dpr);
+    cv.getContext('2d').drawImage(im, 0, 0, cv.width, cv.height);
+    const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
+    if (!blob) throw new Error('bake failed');
+    return URL.createObjectURL(blob);
+  }
+  async function bakeHero(token, w, h, { cx, cy }) {
+    try {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      // загнутий край вирізаємо по його межах (+ запас під тінь), щоб не тримати в пам'яті цілий екран
+      const bb = hero.flap.getBBox(), pad = 28;
+      const fx = Math.floor(bb.x - pad), fy = Math.floor(bb.y - pad), fw = Math.ceil(bb.width + pad * 2), fh = Math.ceil(bb.height + pad * 2);
+      const [pu, fu] = await Promise.all([
+        svgToURL(hero.svg, [0, 0, w, h], w, h, dpr),
+        svgToURL(hero.flapSvg, [fx, fy, fw, fh], fw, fh, dpr)
+      ]);
+      if (token !== hero.build) { URL.revokeObjectURL(pu); URL.revokeObjectURL(fu); return; }
+      hero.urls.forEach(u => URL.revokeObjectURL(u)); hero.urls = [pu, fu];
+      paperImg.src = pu; flapImg.src = fu;
+      Object.assign(flapImg.style, { left: fx + 'px', top: fy + 'px', width: fw + 'px', height: fh + 'px', transformOrigin: `${(cx - fx).toFixed(1)}px ${(cy - fy).toFixed(1)}px` });
+      await Promise.all([paperImg.decode(), flapImg.decode()]);
+      if (token !== hero.build) return;
+      paperImg.hidden = false; flapImg.hidden = false;
+      hero.svg.style.display = 'none'; hero.flapSvg.style.display = 'none';
+      hero.paperEl = paperImg; hero.flapEl = flapImg;
+      updateHero();
+    } catch (err) { /* лишаємо SVG-шар — він теж працює */ }
+  }
+
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  // Якщо браузер вміє scroll-driven animations — анімацію веде сам браузер (CSS, поза головним потоком).
+  // Інакше — запасний варіант через requestAnimationFrame.
+  const cssScroll = window.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()');
+  document.documentElement.classList.toggle('hero-sd', !!cssScroll);
   function updateHero() {
-    if (!hero.animated) {
-      [hero.svg, hero.flapSvg, hero.img, hero.content].forEach(el => { el.style.transform = ''; el.style.opacity = ''; });
+    const els = [hero.svg, hero.flapSvg, paperImg, flapImg, hero.img, hero.content];
+    if (!hero.animated || cssScroll) {
+      els.forEach(el => { el.style.transform = ''; el.style.opacity = ''; });
       hero.content.style.visibility = '';
       return;
     }
     const p = clamp(window.scrollY / hero.span);
-    const e = ease(p), s = 1 + (hero.sMax - 1) * e;
-    hero.svg.style.transform = `scale(${s.toFixed(4)})`;
-    hero.flapSvg.style.transform = `scale(${s.toFixed(4)})`;
-    hero.flapSvg.style.opacity = clamp(1 - p * 2.4).toFixed(3);
+    const e = ease(p), sc = `scale(${(1 + (hero.sMax - 1) * e).toFixed(4)})`;
+    hero.paperEl.style.transform = sc;
+    hero.flapEl.style.transform = sc;
+    hero.flapEl.style.opacity = clamp(1 - p * 2.4).toFixed(3);
     hero.img.style.transform = `scale(${(1.12 - 0.12 * e).toFixed(4)})`;
     const c = clamp(1 - (p - 0.08) / 0.32);
     hero.content.style.opacity = c.toFixed(3);
     hero.content.style.transform = `translateY(${((1 - c) * -24).toFixed(1)}px)`;
     hero.content.style.visibility = c < 0.02 ? 'hidden' : '';
   }
-  // слухаємо scroll тільки поки hero на екрані; will-change — лише на цей час
   let ticking = false;
   window.addEventListener('scroll', () => {
-    if (!hero.animated || !hero.live || ticking) return;
+    if (cssScroll || !hero.animated || !hero.live || ticking) return;
     ticking = true;
     requestAnimationFrame(() => { ticking = false; updateHero(); });
   }, { passive: true });
   new IntersectionObserver(([en]) => {
     hero.live = en.isIntersecting;
     hero.sec.classList.toggle('hero-live', hero.live && hero.animated);
-    if (hero.animated) updateHero();
+    if (hero.animated && !cssScroll) updateHero();
   }).observe(heroWrap);
   let lastW = window.innerWidth, rT;
   window.addEventListener('resize', () => {
