@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Оксамит — шоколадне ательє</title>
+<meta name="description" content="Оксамит — авторський шоколад ручної роботи. Зберіть власну подарункову коробку цукерок, додайте листівку й оберіть дату доставки.">
+<meta name="theme-color" content="#5A0F1C">
+<meta property="og:title" content="Оксамит — шоколадне ательє">
+<meta property="og:description" content="Авторські цукерки ручної роботи та конструктор подарункової коробки.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%235A0F1C'/%3E%3Cg fill='none' stroke='%23C9A27E' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M24 8c8 5.2 11 11 11 16S32 35 24 40C16 35 13 29 13 24S16 13 24 8Z'/%3E%3Cpath d='M24 12c-3 4-4.4 8-4.4 12s1.4 8 4.4 12M24 12c3 4 4.4 8 4.4 12s-1.4 8-4.4 12'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+<script>
+  // фото ще немає → ховаємо «биту» картинку, лишається какао-підкладка
+  document.addEventListener('error', function (e) {
+    var t = e.target;
+    if (t && t.tagName === 'IMG') { t.style.visibility = 'hidden'; t.parentElement && t.parentElement.classList.add('img-failed'); }
+  }, true);
+</script>
+<style>
+:root{
+  --bordeaux:#5A0F1C;
+  --bordeaux-deep:#45091A;
+  --choco:#3B2418;
+  --dark:#1E120C;
+  --cream:#F3E9DD;
+  --milk:#E6D3BE;
+  --gold:#C9A27E;
+  --ink-soft:#5E4434;      /* приглушений текст на кремовому */
+  --gold-ink:#7A5236;      /* «золото» для тексту на світлому */
+  --radius:6px;
+  --radius-sm:4px;
+  --shadow-soft:0 18px 40px -22px rgba(30,18,12,.55);
+  --shadow-card:0 10px 30px -18px rgba(30,18,12,.45);
+  --serif:"Cormorant Garamond", "Times New Roman", serif;
+  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease:cubic-bezier(.22,.7,.2,1);
+  --header-h:72px;
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .96 0 0 0 0 .88 0 0 0 0 .78 0 0 0 .11 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --cocoa:radial-gradient(ellipse at 38% 32%,#3B2418 0%,#2C1A11 48%,#1E120C 100%);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--choco);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.on-light :focus-visible, .light :focus-visible{outline-color:var(--bordeaux)}
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--cream);color:var(--bordeaux);padding:10px 16px;border-radius:var(--radius-sm);text-decoration:none;font-weight:600;transition:top .2s}
+.skip:focus{top:12px}
+.container{width:min(1200px,100% - 40px);margin-inline:auto}
+
+/* ---------- typography ---------- */
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;margin:0;letter-spacing:-.005em}
+h2{font-size:clamp(2.3rem,5.2vw,4rem)}
+h3{font-size:1.6rem;font-weight:400}
+em,.it{font-style:italic}
+.eyebrow{font-family:var(--sans);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold-ink);margin:0 0 18px;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:36px;height:1px;background:currentColor;opacity:.7}
+.dark .eyebrow,.bordeaux .eyebrow{color:var(--gold)}
+.lead{font-size:1.075rem;color:var(--ink-soft);max-width:56ch;margin:20px 0 0}
+.bordeaux .lead,.dark .lead{color:#E9D9C6}
+.rule{display:flex;align-items:center;gap:14px;color:var(--gold);margin:28px 0}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:currentColor;opacity:.55}
+.rule svg{width:10px;height:10px;flex:none}
+.section-head{display:grid;gap:4px;margin-bottom:48px}
+.section-head.split{grid-template-columns:1fr auto;align-items:end;gap:24px}
+@media (max-width:760px){.section-head.split{grid-template-columns:1fr}}
+
+/* ---------- buttons ---------- */
+.btn{--bg:var(--bordeaux);--fg:var(--cream);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;border-radius:var(--radius-sm);border:1px solid var(--bg);background:var(--bg);color:var(--fg);font-weight:600;font-size:.95rem;letter-spacing:.04em;text-decoration:none;transition:transform .25s var(--ease),background .25s,color .25s,box-shadow .25s;box-shadow:0 10px 24px -14px rgba(30,18,12,.7)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn--cream{--bg:var(--cream);--fg:var(--bordeaux)}
+.btn--ghost{background:transparent;color:var(--bordeaux);box-shadow:none}
+.btn--ghost:hover{background:rgba(90,15,28,.06)}
+.btn[disabled],.btn[aria-disabled="true"]{background:transparent;color:var(--bordeaux);border-color:var(--bordeaux);cursor:not-allowed;transform:none;box-shadow:none}
+.btn svg{width:18px;height:18px}
+.link-btn{background:none;border:0;padding:6px 0;color:var(--bordeaux);font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+
+/* ---------- header ---------- */
+.site-header{position:fixed;inset:0 0 auto;z-index:50;height:var(--header-h);color:var(--cream);transition:background .35s,color .35s,box-shadow .35s}
+.site-header.solid{background:rgba(243,233,221,.94);color:var(--choco);box-shadow:0 1px 0 rgba(201,162,126,.5);backdrop-filter:saturate(1.2) blur(8px);-webkit-backdrop-filter:saturate(1.2) blur(8px)}
+.site-header.solid :focus-visible{outline-color:var(--bordeaux)}
+.header-inner{height:100%;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand svg{width:40px;height:40px;color:var(--gold);flex:none}
+.site-header.solid .brand svg{color:var(--bordeaux)}
+.brand-name{font-family:var(--serif);font-size:1.7rem;font-weight:500;letter-spacing:.06em;line-height:1}
+.brand-sub{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;margin-top:4px;opacity:.85}
+.nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0}
+.nav a{text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.02em;position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a:hover::after{transform:scaleX(1)}
+.icon-btn{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:var(--radius-sm);border:1px solid currentColor;border-color:rgba(201,162,126,.6);background:transparent}
+.icon-btn svg{width:20px;height:20px}
+.cart-count{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--gold);color:var(--dark);font-size:.72rem;font-weight:700;display:grid;place-items:center;line-height:1}
+.cart-count[data-zero="true"]{display:none}
+.cart-count.bump{animation:bump .5s var(--ease)}
+@keyframes bump{40%{transform:scale(1.35)}}
+.burger{display:none}
+@media (max-width:900px){
+  .burger{display:inline-grid}
+  .nav{position:fixed;inset:var(--header-h) 0 auto;background:var(--cream);color:var(--choco);box-shadow:0 20px 40px -20px rgba(30,18,12,.5);border-top:1px solid rgba(201,162,126,.5);display:none}
+  .nav.open{display:block}
+  .nav ul{flex-direction:column;gap:0;padding:8px 20px 20px}
+  .nav a{display:block;padding:14px 0;border-bottom:1px solid rgba(201,162,126,.35);font-size:1rem}
+  .nav a::after{display:none}
+  .brand-sub{display:none}
+}
+
+/* ---------- hero ---------- */
+.hero-wrap{position:relative;height:220vh;background:var(--bordeaux)}
+.hero{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bordeaux);isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:0;background:var(--choco)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;transform:scale(1.12);will-change:transform}
+.hero-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.hero-content{position:absolute;left:0;right:0;bottom:clamp(30px,6.5vh,64px);z-index:2;text-align:center;color:var(--cream);padding:0 20px;will-change:opacity,transform}
+.hero-kicker{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.6rem);font-style:italic;font-weight:300;margin:0 auto 22px;max-width:24ch}
+.hero-scroll{position:absolute;left:50%;bottom:4px;z-index:2;transform:translateX(-50%);width:1px;height:20px;background:linear-gradient(var(--gold),transparent);opacity:.8}
+@media (max-width:600px){
+  .hero-content{bottom:clamp(28px,5.5vh,52px)}
+  .hero h1{margin-bottom:18px}
+  .hero-kicker{font-size:.68rem;letter-spacing:.24em;margin-bottom:10px}
+}
+
+/* ---------- sections ---------- */
+.section{padding:clamp(72px,11vw,140px) 0;position:relative}
+.light{background:var(--cream)}
+.milk{background:var(--milk)}
+.bordeaux{background:var(--bordeaux);color:var(--cream)}
+.dark{background:var(--dark);color:var(--cream)}
+
+/* ---------- intro strip ---------- */
+.intro{padding:clamp(56px,8vw,96px) 0 0}
+.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,56px);border-top:1px solid rgba(201,162,126,.6);border-bottom:1px solid rgba(201,162,126,.6);padding:34px 0}
+.intro-item{display:flex;gap:16px;align-items:flex-start}
+.intro-item svg{width:30px;height:30px;color:var(--gold-ink);flex:none;margin-top:4px}
+.intro-item h3{font-size:1.4rem;margin-bottom:4px}
+.intro-item p{margin:0;font-size:.92rem;color:var(--ink-soft)}
+@media (max-width:760px){.intro-grid{grid-template-columns:1fr;gap:22px}}
+
+/* ---------- collection ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:42px;padding:0 18px;border-radius:var(--radius-sm);border:1px solid rgba(90,15,28,.35);background:transparent;color:var(--choco);font-weight:500;font-size:.9rem;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--bordeaux)}
+.chip[aria-pressed="true"]{background:var(--bordeaux);border-color:var(--bordeaux);color:var(--cream)}
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,32px)}
+@media (max-width:980px){.grid-cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid-cards{grid-template-columns:1fr}}
+.card{background:#FBF5EE;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);display:flex;flex-direction:column;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 44px -24px rgba(30,18,12,.6)}
+.card[hidden]{display:none}
+.ph{position:relative;margin:0;aspect-ratio:1/1;overflow:hidden;background:radial-gradient(circle at 40% 35%,#6b4632,#2a1810 75%)}
+.ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card-tag{z-index:2}
+.card:hover .ph img{transform:scale(1.05)}
+.ph.img-failed img{visibility:hidden}
+.card-tag{position:absolute;left:14px;top:14px;background:rgba(243,233,221,.94);color:var(--bordeaux);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:6px 10px;border-radius:var(--radius-sm)}
+.card-body{padding:22px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card-body h3{font-size:1.75rem}
+.card-taste{margin:0;color:var(--ink-soft);font-size:.92rem}
+.card-foot{margin-top:auto;padding-top:16px;border-top:1px solid rgba(201,162,126,.55);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.price{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--choco)}
+.price small{font-family:var(--sans);font-size:.78rem;color:var(--ink-soft);font-weight:500;margin-left:4px}
+.add-mini{min-height:42px;padding:0 16px;border-radius:var(--radius-sm);border:1px solid var(--bordeaux);background:transparent;color:var(--bordeaux);font-weight:600;font-size:.85rem;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.add-mini:hover{background:var(--bordeaux);color:var(--cream)}
+.add-mini svg{width:16px;height:16px}
+.empty-note{grid-column:1/-1;text-align:center;color:var(--ink-soft)}
+
+/* ---------- candies (drawn) ---------- */
+.bon{position:relative;display:block;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--noise),var(--cocoa);background-size:120px 120px,cover;box-shadow:0 0 0 1.5px var(--gold),0 4px 10px rgba(20,10,6,.35)}
+.bon img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+
+/* ---------- builder ---------- */
+.builder>*,.side>*,.panel{min-width:0}
+.builder{display:grid;grid-template-columns:minmax(230px,.9fr) minmax(320px,1.25fr) minmax(280px,1fr);grid-template-areas:"palette box side";gap:clamp(20px,3vw,40px);align-items:start}
+.panel{background:#FBF5EE;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-card)}
+.panel h3{font-size:1.45rem;margin-bottom:6px}
+.panel-note{margin:0 0 16px;font-size:.88rem;color:var(--ink-soft)}
+.palette{grid-area:palette}
+.box-area{grid-area:box;position:sticky;top:calc(var(--header-h) + 20px)}
+.side{grid-area:side;display:grid;gap:20px}
+.picks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
+.pick{width:100%;display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:14px;padding:10px 12px;border-radius:var(--radius-sm);border:1px solid rgba(201,162,126,.55);background:var(--cream);text-align:left;transition:border-color .2s,transform .2s,background .2s}
+.pick:hover{border-color:var(--bordeaux);background:#fff8f0}
+.pick:active{transform:scale(.98)}
+.pick .bon{width:72px}
+.pick-name{font-weight:600;font-size:.92rem;line-height:1.25;display:block}
+.pick-type{font-size:.78rem;color:var(--ink-soft)}
+.pick-price{font-family:var(--serif);font-size:1.25rem;font-weight:500}
+
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{padding:0;font-weight:600;font-size:.88rem;margin-bottom:10px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(90,15,28,.4);border-radius:var(--radius-sm);overflow:hidden}
+.seg label{position:relative;display:grid;place-items:center;min-height:46px;cursor:pointer;font-weight:600;font-size:.92rem;transition:background .2s,color .2s;border-left:1px solid rgba(90,15,28,.25)}
+.seg label:first-of-type{border-left:0}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg label:has(input:checked){background:var(--bordeaux);color:var(--cream)}
+.seg label:has(input:focus-visible){outline:2px solid var(--bordeaux);outline-offset:-4px}
+.seg small{display:block;font-weight:500;font-size:.7rem;opacity:.85;margin-top:-6px}
+
+.box-top{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:18px 0 22px}
+.box-count{font-family:var(--serif);font-size:1.5rem}
+.box-count b{font-weight:500}
+.box-count span{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-left:6px}
+.price,.pick-price,.box-count,.summary dd,.cart-total,.cart-item>span,.cart-count,.counter,.pill-d,.win-door,.win-inside span{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
+.box{position:relative;background:linear-gradient(160deg,#3A2117,#22130C);border-radius:var(--radius);padding:clamp(16px,3vw,28px);box-shadow:0 30px 50px -28px rgba(30,18,12,.9),inset 0 0 0 1px rgba(201,162,126,.25)}
+.box::before{content:"";position:absolute;inset:9px;border:1px solid rgba(201,162,126,.55);border-radius:var(--radius-sm);pointer-events:none}
+.box-label{position:absolute;top:-1px;left:50%;transform:translate(-50%,-50%);background:var(--cream);color:var(--bordeaux);font-family:var(--serif);font-style:italic;font-size:1rem;padding:2px 14px;border-radius:var(--radius-sm);border:1px solid rgba(201,162,126,.8);white-space:nowrap}
+.box-grid{display:grid;grid-template-columns:repeat(var(--cols,3),1fr);gap:clamp(6px,1.2vw,12px);position:relative}
+.cell{position:relative;aspect-ratio:1;border:0;padding:0;border-radius:50%;background:transparent;display:grid;place-items:center}
+.cell:disabled{cursor:default}
+.cup{position:absolute;inset:4%;border-radius:50%;background:radial-gradient(circle,#24140D 0 52%,transparent 53%),repeating-conic-gradient(from 0deg,#3C2419 0 7deg,#2C1910 7deg 14deg);box-shadow:inset 0 2px 6px rgba(0,0,0,.6)}
+.cell .num{position:relative;font-size:.72rem;color:rgba(201,162,126,.75);font-weight:600}
+.cell .bon{position:absolute;width:76%;left:12%;top:12%}
+.cell.filled{cursor:pointer}
+.cell.filled:hover .bon{transform:translateY(-2px) scale(1.04);transition:transform .2s}
+.cell.landing .bon{opacity:0}
+.cell.leaving .bon{animation:leave .28s var(--ease) forwards}
+@keyframes leave{to{transform:scale(.3) translateY(-30%);opacity:0}}
+.cell.pop .bon{animation:pop .35s var(--ease)}
+@keyframes pop{0%{transform:scale(.6);opacity:.4}70%{transform:scale(1.05);opacity:1}100%{transform:scale(1)}}
+.flyer{border-radius:50%}
+.box-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.box-actions .btn{min-height:44px;padding:0 18px;font-size:.88rem}
+
+.field{display:grid;gap:8px}
+.field label,.label{font-weight:600;font-size:.88rem}
+.input,textarea.input,select.input{width:100%;min-height:48px;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid rgba(59,36,24,.55);background:#fff;color:var(--choco);transition:border-color .2s,box-shadow .2s}
+.input:focus{outline:none;border-color:var(--bordeaux);box-shadow:0 0 0 3px rgba(90,15,28,.18)}
+textarea.input{min-height:96px;resize:vertical;line-height:1.5}
+.hint{font-size:.8rem;color:var(--ink-soft);margin:0}
+.pills{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:12px}
+.pill{position:relative;display:grid;justify-items:center;gap:1px;padding:10px 0 11px;border:1px solid rgba(90,15,28,.35);border-radius:999px;background:var(--cream);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.pill:hover{border-color:var(--bordeaux)}
+.pill input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.pill-wd{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:lowercase;color:var(--ink-soft)}
+.pill-d{font-family:var(--serif);font-size:1.45rem;font-weight:500;line-height:1}
+.pill:has(input:checked){background:var(--bordeaux);border-color:var(--bordeaux);color:var(--cream)}
+.pill:has(input:checked) .pill-wd{color:#E9D9C6}
+.pill:has(input:focus-visible){outline:2px solid var(--bordeaux);outline-offset:2px}
+@media (max-width:700px){
+  .pills{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 8px;margin-inline:-2px;scrollbar-width:none}
+  .pills::-webkit-scrollbar{display:none}
+  .pill{flex:0 0 62px;scroll-snap-align:start}
+}
+.counter{text-align:right}
+.postcard{position:relative;margin-top:14px;aspect-ratio:3/2;background:linear-gradient(180deg,#FFFBF5,#F6EBDD);border-radius:var(--radius-sm);box-shadow:0 14px 28px -18px rgba(30,18,12,.6),inset 0 0 0 1px rgba(201,162,126,.6);padding:20px 22px;display:flex;flex-direction:column;transform:rotate(-1.2deg)}
+.postcard::before{content:"";position:absolute;inset:8px;border:1px solid rgba(201,162,126,.6);border-radius:2px;pointer-events:none}
+.postcard svg{width:26px;height:26px;color:var(--bordeaux);margin:0 auto 8px;flex:none}
+.postcard-text{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.35;color:var(--choco);text-align:center;overflow-wrap:anywhere;flex:1;display:grid;place-items:center;margin:0}
+.postcard-text.placeholder{color:#735647}
+.postcard-sign{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-align:center;color:var(--gold-ink);font-weight:600}
+.summary dl{margin:0;display:grid;gap:8px}
+.summary .row{display:flex;justify-content:space-between;gap:12px;font-size:.92rem}
+.summary dt{color:var(--ink-soft)}
+.summary dd{margin:0;font-weight:600;text-align:right}
+.summary .total{border-top:1px solid rgba(201,162,126,.6);padding-top:12px;margin-top:6px;align-items:baseline}
+.summary .total dd{font-family:var(--serif);font-size:2rem;font-weight:500}
+.summary .btn{width:100%;margin-top:16px}
+.mini-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:14px}
+.mini-row:empty{display:none}
+.mini-row .bon{width:26px;flex:none;box-shadow:0 0 0 1px var(--gold)}
+.cart-item .mini-row{grid-column:1/-1;margin-top:6px}
+.contents-list{font-size:.82rem;color:var(--ink-soft);margin:10px 0 0;min-height:1.2em}
+.progress{height:3px;background:rgba(201,162,126,.35);border-radius:2px;overflow:hidden;margin:12px 0 4px}
+.progress span{display:block;height:100%;background:var(--bordeaux);width:0;transition:width .4s var(--ease)}
+
+@media (max-width:1100px){
+  .builder{grid-template-columns:1fr 1fr;grid-template-areas:"box box" "palette palette" "side side"}
+  .box-area{position:static;max-width:560px;width:100%;margin-inline:auto}
+  .side{grid-template-columns:1fr 1fr}
+  .palette{padding:20px 0 16px;background:transparent;box-shadow:none}
+  .palette .panel-head{padding:0 4px}
+  .picks{grid-auto-flow:column;grid-auto-columns:minmax(150px,170px);grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .picks li{scroll-snap-align:start}
+  .pick{grid-template-columns:1fr;justify-items:center;text-align:center;gap:6px;padding:14px 10px;height:100%}
+  .pick .bon{width:72px}
+}
+@media (max-width:700px){
+  .builder{grid-template-columns:1fr;grid-template-areas:"box" "palette" "side"}
+  .side{grid-template-columns:1fr}
+  .panel{padding:20px}
+}
+
+/* ---------- holiday / advent ---------- */
+.holiday{overflow:hidden}
+.holiday::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(201,162,126,.16),transparent 55%),radial-gradient(ellipse at 90% 100%,rgba(0,0,0,.25),transparent 60%);pointer-events:none}
+.holiday-grid>*,.corp-grid>*{min-width:0}
+.holiday-grid{position:relative;display:grid;grid-template-columns:40% minmax(0,1fr);grid-template-areas:"head head" "photo cal";gap:clamp(36px,4vw,56px) clamp(24px,3.5vw,48px);align-items:stretch}
+.holiday-head{grid-area:head}
+.holiday-photo{grid-area:photo}
+.holiday-cal{grid-area:cal}
+.holiday-photo{margin:0;border-radius:var(--radius);overflow:hidden;min-height:320px;box-shadow:0 30px 50px -30px rgba(0,0,0,.8);background:radial-gradient(circle at 40% 35%,#6b4632,#2a1810 75%)}
+.holiday-photo img{width:100%;height:100%;object-fit:cover}
+.advent{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(6px,1vw,12px)}
+.win{position:relative;aspect-ratio:1/1.1;rotate:var(--tilt,0deg);border:0;padding:0;border-radius:var(--radius-sm);background:transparent;perspective:600px;color:var(--cream)}
+.win-inside{position:absolute;inset:0;border-radius:var(--radius-sm);background:var(--cream);color:var(--bordeaux);display:grid;place-items:center;align-content:center;gap:4px;padding:6px;box-shadow:inset 0 3px 10px rgba(30,18,12,.35)}
+.win-inside .bon{width:44%;max-width:42px}
+.win-inside span{font-size:.68rem;font-weight:700;letter-spacing:.06em}
+.win-rim{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none}
+.win-door{position:absolute;inset:0;border-radius:var(--radius-sm);background:linear-gradient(155deg,#73182B,#4F0C19);border:1px solid rgba(201,162,126,.45);display:grid;place-items:center;font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2.2rem);font-weight:400;color:var(--cream);transform-origin:12% 8%;box-shadow:0 8px 16px -10px rgba(0,0,0,.8);transition:border-color .25s,transform .25s}
+.win:not(:disabled):hover .win-door{border-color:var(--gold);transform:translateY(-2px)}
+.win.is-today .win-door{border:1px solid var(--gold);box-shadow:0 0 0 3px rgba(201,162,126,.28),0 8px 16px -10px rgba(0,0,0,.8)}
+.win.is-today .win-door::after{content:"сьогодні";position:absolute;bottom:6px;left:0;right:0;text-align:center;font-family:var(--sans);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.win:disabled{cursor:not-allowed}
+.win:disabled .win-door{background:linear-gradient(155deg,#5C1222,#420A16);color:#D9C3B0;border-color:rgba(201,162,126,.22)}
+.win.is-open .win-door{display:none}
+.win.is-open .win-rim{opacity:1}
+.win.tearing .win-door{animation:tear 1s var(--ease) forwards;z-index:3}
+.win.tearing .win-rim{opacity:1;transition:opacity .2s .15s}
+@keyframes tear{
+  0%{transform:none}
+  18%{transform:rotate(-4deg) translate(-2px,-3px)}
+  32%{transform:rotate(3deg) translate(1px,-1px);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+  55%{transform:rotate(-16deg) translate(-10%,20%);clip-path:polygon(0 0,92% 6%,100% 30%,88% 58%,100% 82%,74% 100%,0 96%);opacity:1}
+  100%{transform:rotate(-42deg) translate(-30%,150%);clip-path:polygon(0 0,92% 6%,100% 30%,88% 58%,100% 82%,74% 100%,0 96%);opacity:0}
+}
+.gift{margin-top:24px;min-height:120px;border:1px solid rgba(201,162,126,.5);border-radius:var(--radius);padding:22px 24px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:rgba(30,18,12,.18)}
+.gift svg{width:42px;height:42px;color:var(--gold)}
+.gift h3{font-size:1.6rem;font-style:italic;margin-bottom:4px}
+.gift p{margin:0;color:#EBDDCB}
+.gift.reveal-gift{animation:giftin .6s var(--ease)}
+@keyframes giftin{from{opacity:0;transform:translateY(10px)}}
+.demo-note{font-size:.85rem;color:#E9D9C6;margin:16px 0 0}
+@media (max-width:900px){
+  .holiday-grid{grid-template-columns:1fr;grid-template-areas:"head" "photo" "cal";row-gap:28px}
+  .holiday-photo{height:220px;min-height:0}
+}
+@media (max-width:560px){.advent{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* ---------- corporate ---------- */
+.corp-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,5vw,72px);align-items:center}
+.corp-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:5/4;box-shadow:var(--shadow-soft);background:radial-gradient(circle at 40% 35%,#6b4632,#2a1810 75%)}
+.corp-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+.corp-points{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px}
+.corp-points li{display:flex;gap:12px;align-items:baseline}
+.corp-points li::before{content:"";flex:none;width:7px;height:7px;transform:rotate(45deg) translateY(-2px);border:1px solid var(--gold-ink)}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;margin-top:30px;align-items:start}
+.form .field{align-content:start;gap:8px}
+.form .field label{line-height:1.3}
+.form .input:not(textarea){height:52px;min-height:52px;padding:0 14px;line-height:normal}
+.form textarea.input{padding:14px}
+.input::placeholder{color:rgba(122,82,54,.85);opacity:1}
+/* дата: ті самі шрифт і рамка, власна лінійна іконка */
+.input[type="date"]{position:relative;appearance:none;-webkit-appearance:none;font-family:var(--sans);font-size:1rem;color:var(--choco);padding-right:48px;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235A0F1C' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='5' width='17' height='15' rx='1.5'/%3E%3Cpath d='M3.5 9.5h17M8 3v4M16 3v4M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2'/%3E%3C/svg%3E") no-repeat right 14px center/20px 20px}
+.input[type="date"]::-webkit-calendar-picker-indicator{position:absolute;right:0;top:0;width:48px;height:100%;margin:0;padding:0;opacity:0;cursor:pointer}
+.input[type="date"]::-webkit-datetime-edit{padding:0;font-family:var(--sans)}
+.input[type="date"]::-webkit-date-and-time-value{text-align:left}
+.form .full{grid-column:1/-1}
+.form .btn{justify-self:start}
+.form-success{grid-column:1/-1;background:#FBF5EE;border-left:2px solid var(--bordeaux);padding:16px 18px;border-radius:var(--radius-sm)}
+.input:user-invalid{border-color:#9B1C2E}
+@media (max-width:900px){.corp-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.form{grid-template-columns:1fr}}
+
+/* ---------- reviews ---------- */
+.concept-note{margin:10px 0 0;font-size:.8rem;letter-spacing:.04em;color:var(--gold-ink)}
+.reviews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.4vw,32px)}
+.reviews:focus-visible{outline:2px solid var(--bordeaux);outline-offset:6px}
+.review{margin:0;background:var(--cream);border-radius:var(--radius);padding:30px 28px 26px;position:relative;box-shadow:var(--shadow-card);display:flex;flex-direction:column}
+.review-quote{width:30px;height:30px;color:var(--gold-ink);margin-bottom:14px}
+.stars{display:block;width:84px;height:15px;color:#A47A4C;margin-bottom:14px}
+.review blockquote{margin:0 0 auto;font-family:var(--serif);font-size:clamp(1.375rem,1.25rem + .3vw,1.5rem);font-style:italic;font-weight:400;line-height:1.32;color:var(--choco)}
+.review blockquote p{margin:0}
+.review figcaption{margin-top:22px;padding-top:14px;border-top:1px solid rgba(201,162,126,.6);display:grid;gap:2px}
+.review-name{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--choco)}
+.review-order{font-family:var(--sans);font-size:13px;color:#7A5236}
+@media (max-width:900px){
+  .reviews{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:min(82%,340px);overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-20px;padding:6px 20px 22px;scroll-padding-inline:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .reviews::-webkit-scrollbar{display:none}
+  .review{scroll-snap-align:start}
+}
+
+/* ---------- footer ---------- */
+.footer{padding:72px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+.footer .brand svg{color:var(--gold)}
+.footer h3{font-family:var(--sans);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:16px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.93rem}
+.footer a{text-decoration:none;color:#E9D9C6}
+.footer a:hover{color:var(--cream);text-decoration:underline;text-underline-offset:4px}
+.footer p{color:#D8C6B2;font-size:.93rem;max-width:34ch}
+.socials{display:flex;gap:10px}
+.socials a{display:inline-grid;place-items:center;width:42px;height:42px;border:1px solid rgba(201,162,126,.5);border-radius:var(--radius-sm)}
+.socials svg{width:18px;height:18px;color:var(--gold)}
+.pay{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pay span{border:1px solid rgba(201,162,126,.5);border-radius:var(--radius-sm);padding:5px 10px;font-size:.75rem;font-weight:700;letter-spacing:.06em;color:#E9D9C6}
+.footer-bottom{margin-top:56px;padding-top:22px;border-top:1px solid rgba(201,162,126,.3);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8rem;color:#BFA994}
+@media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.footer-grid{grid-template-columns:1fr}}
+
+/* ---------- cart dialog & toast ---------- */
+dialog.cart{border:0;padding:0;border-radius:var(--radius);width:min(460px,calc(100% - 32px));background:var(--cream);color:var(--choco);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+dialog.cart::backdrop{background:rgba(30,18,12,.55)}
+.cart-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid rgba(201,162,126,.6)}
+.cart-head h2{font-size:2rem}
+.cart-body{padding:12px 22px 22px;max-height:60vh;overflow:auto}
+.cart-item{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 0;border-bottom:1px solid rgba(201,162,126,.4)}
+.cart-item p{margin:0;font-size:.82rem;color:var(--ink-soft);grid-column:1/-1}
+.cart-item .link-btn{font-size:.82rem;justify-self:start}
+.cart-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px;font-weight:600}
+.cart-total b{font-family:var(--serif);font-size:1.8rem;font-weight:500}
+.cart-empty{color:var(--ink-soft);padding:16px 0}
+.cart .icon-btn{border-color:rgba(90,15,28,.35);color:var(--bordeaux)}
+.toast{position:fixed;left:50%;bottom:24px;z-index:120;transform:translate(-50%,20px);background:var(--dark);color:var(--cream);padding:14px 20px;border-radius:var(--radius-sm);font-size:.9rem;box-shadow:0 20px 40px -20px rgba(0,0,0,.8);border:1px solid rgba(201,162,126,.4);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s var(--ease);max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- photo fallback: какао + шум ---------- */
+.hero-photo,.ph,.holiday-photo,.corp-photo{background:var(--noise),var(--cocoa);background-size:200px 200px,cover}
+.img-failed img{visibility:hidden}
+
+.hero-photo img,.ph img,.holiday-photo img,.corp-photo img,.bon img{filter:saturate(.9) sepia(.12) contrast(1.05)}
+
+/* ---------- reveal ---------- */
+.motion .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.motion .reveal.in{opacity:1;transform:none}
+.motion .reveal.d1{transition-delay:.08s}.motion .reveal.d2{transition-delay:.16s}.motion .reveal.d3{transition-delay:.24s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .hero-wrap{height:auto}
+  .hero{position:relative}
+  .hero-scroll{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Перейти до змісту</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="mono" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="24" cy="24" r="22"/>
+        <circle cx="24" cy="24" r="19.5" stroke-width=".6" opacity=".7"/>
+        <path d="M24 8c8.2 5.2 11.2 11 11.2 16S32.2 34.8 24 40C15.8 34.8 12.8 29 12.8 24S15.8 13.2 24 8Z"/>
+        <path d="M24 12c-3.3 4-4.7 8-4.7 12s1.4 8 4.7 12M24 12c3.3 4 4.7 8 4.7 12s-1.4 8-4.7 12"/>
+        <path d="M24 4.5v2M24 41.5v2" stroke-width="1"/>
+      </g>
+    </symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></g></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11" rx="1"/><path d="M2.5 9h19V6.5h-19zM12 6.5V20"/><path d="M12 6.5C10 3 7 3.2 7 5s3 1.5 5 1.5Zm0 0c2-3.5 5-3.3 5-1.5s-3 1.5-5 1.5Z"/></g></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M12 3c5 3 7 6.5 7 9.5S16 20 12 21C8 20 5 15.5 5 12.5S7 6 12 3Z"/><path d="M12 6v14"/></g></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c2.5-.3 4.5.5 6 2h3.5a1.5 1.5 0 0 1 0 3H9"/><path d="M13.5 19 19 16.5a1.6 1.6 0 0 1 1.5 2.8L14 22H4"/><circle cx="14" cy="7" r="3.5"/></g></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M2.5 6.5h11v10h-11zM13.5 10h4l3 3.5v3h-7z"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></g></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M10 7c-3 1-5 3.5-5 7v3h5v-5H7.5c.2-2 1.3-3.4 3-4.2L10 7Zm9 0c-3 1-5 3.5-5 7v3h5v-5h-2.5c.2-2 1.3-3.4 3-4.2L19 7Z" fill="currentColor"/></symbol>
+    <symbol id="i-star" viewBox="0 0 16 16"><path d="M8 .9l2.1 4.6 5 .5-3.8 3.4 1.1 4.9L8 11.8l-4.4 2.5 1.1-4.9L.9 6l5-.5L8 .9Z" fill="currentColor"/></symbol>
+    <symbol id="i-diamond" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="none" stroke="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Оксамит — на початок сторінки">
+      <svg aria-hidden="true"><use href="#mono"/></svg>
+      <span><span class="brand-name">Оксамит</span><span class="brand-sub">шоколадне ательє</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Головне меню">
+      <ul>
+        <li><a href="#collection">Колекція</a></li>
+        <li><a href="#builder">Зібрати коробку</a></li>
+        <li><a href="#holiday">Святкове</a></li>
+        <li><a href="#corporate">Корпоративним клієнтам</a></li>
+      </ul>
+    </nav>
+    <button class="icon-btn" id="cartBtn" type="button" aria-haspopup="dialog" aria-label="Кошик, товарів: 0">
+      <svg aria-hidden="true"><use href="#i-bag"/></svg>
+      <span class="cart-count" id="cartCount" data-zero="true" aria-hidden="true">0</span>
+    </button>
+    <button class="icon-btn burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Відкрити меню">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <div class="hero-wrap" id="heroWrap">
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <div class="hero-photo">
+        <img id="heroImg" src="https://images.pexels.com/photos/15550424/pexels-photo-15550424.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Шоколадні цукерки ручної роботи крупним планом у теплому світлі" fetchpriority="high" decoding="async">
+      </div>
+      <svg class="hero-svg" id="heroSvg" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="paperGrad" cx="50%" cy="42%" r="75%">
+            <stop offset="0" stop-color="#6A1424"/>
+            <stop offset=".55" stop-color="#5A0F1C"/>
+            <stop offset="1" stop-color="#3F0914"/>
+          </radialGradient>
+          <linearGradient id="flapGrad" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#340610"/>
+            <stop offset=".12" stop-color="#5A0F1C"/>
+            <stop offset=".42" stop-color="#8C2437"/>
+            <stop offset=".62" stop-color="#7A1B2E"/>
+            <stop offset=".9" stop-color="#4E0B19"/>
+            <stop offset="1" stop-color="#3A0711"/>
+          </linearGradient>
+          <filter id="fibers" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence type="fractalNoise" baseFrequency=".55 1.4" numOctaves="3" seed="7" result="t"/>
+            <feDisplacementMap in="SourceGraphic" in2="t" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="11"/></filter>
+          <filter id="contact" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter>
+          <filter id="flapShadow" x="-40%" y="-20%" width="180%" height="140%"><feDropShadow dx="9" dy="7" stdDeviation="7" flood-color="#14060A" flood-opacity=".55"/><feDropShadow dx="2" dy="1" stdDeviation="1.2" flood-color="#14060A" flood-opacity=".4"/></filter>
+          <mask id="holeMask" maskUnits="userSpaceOnUse">
+            <rect id="maskRect" x="0" y="0" width="100" height="100" fill="#fff"/>
+            <path id="holeM" fill="#000"/>
+          </mask>
+          <clipPath id="holeClip"><path id="holeC"/></clipPath>
+        </defs>
+        <rect id="paper" x="0" y="0" width="100" height="100" fill="url(#paperGrad)" mask="url(#holeMask)"/>
+        <g clip-path="url(#holeClip)">
+          <path id="holeShadow" fill="none" stroke="#0E0705" stroke-opacity=".6" stroke-width="34" filter="url(#soft)"/>
+          <path id="holeShadow2" fill="none" stroke="#0E0705" stroke-opacity=".5" stroke-width="7" filter="url(#contact)"/>
+        </g>
+        <g id="fiberG" filter="url(#fibers)">
+          <path id="fiberA" fill="#F3E9DD" fill-opacity=".42" fill-rule="evenodd"/>
+          <path id="fiberB" fill="#F3E9DD" fill-opacity=".5" fill-rule="evenodd"/>
+        </g>
+        <g id="flapG"><path id="flap" fill="url(#flapGrad)" filter="url(#flapShadow)"/><path id="flapFiber" fill="none" stroke="#F3E9DD" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round" filter="url(#fibers)"/></g>
+      </svg>
+      <div class="hero-content" id="heroContent">
+        <p class="hero-kicker">Авторські цукерки · сезон 2026</p>
+        <h1 id="heroTitle">Час для чогось теплого</h1>
+        <a class="btn btn--cream" href="#builder">Зібрати коробку</a>
+      </div>
+      <span class="hero-scroll" aria-hidden="true"></span>
+    </section>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro light" aria-label="Чому Оксамит">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-item reveal"><svg aria-hidden="true"><use href="#i-hand"/></svg><div><h3>Ручна робота</h3><p>Кожну цукерку темперуємо й розписуємо вручну невеликими партіями.</p></div></div>
+        <div class="intro-item reveal d1"><svg aria-hidden="true"><use href="#i-leaf"/></svg><div><h3>Чесний склад</h3><p>Какао-масло без замінників, вершки, горіхи власного обсмаження.</p></div></div>
+        <div class="intro-item reveal d2"><svg aria-hidden="true"><use href="#i-truck"/></svg><div><h3>Доставка завтра</h3><p>Привеземо в термопакуванні разом із листівкою вашим почерком.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="section light" id="collection" aria-labelledby="colTitle">
+    <div class="container">
+      <div class="section-head split">
+        <div class="reveal">
+          <p class="eyebrow">Колекція</p>
+          <h2 id="colTitle">Шість смаків <em>цієї зими</em></h2>
+        </div>
+        <div class="filters reveal d1" role="group" aria-label="Фільтр колекції" id="filters">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">Усі</button>
+          <button class="chip" type="button" data-filter="dark" aria-pressed="false">Темний</button>
+          <button class="chip" type="button" data-filter="milk" aria-pressed="false">Молочний</button>
+          <button class="chip" type="button" data-filter="white" aria-pressed="false">Білий</button>
+          <button class="chip" type="button" data-filter="nut" aria-pressed="false">Горіхові</button>
+        </div>
+      </div>
+      <div class="grid-cards" id="cards"></div>
+      <p class="visually-hidden" id="filterStatus" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- BUILDER -->
+  <section class="section milk" id="builder" aria-labelledby="buildTitle">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Конструктор</p>
+        <h2 id="buildTitle">Зберіть коробку, <em>як подарунок собі</em></h2>
+        <p class="lead">Оберіть розмір, торкніться цукерки — і вона ляже в наступну вільну комірку. Щоб прибрати, натисніть на комірку.</p>
+      </div>
+
+      <div class="builder">
+        <div class="box-area reveal">
+          <fieldset>
+            <legend>Розмір коробки</legend>
+            <div class="seg" id="sizeSeg">
+              <label><input type="radio" name="size" value="6"><span>6 <small>цукерок</small></span></label>
+              <label><input type="radio" name="size" value="9" checked><span>9 <small>цукерок</small></span></label>
+              <label><input type="radio" name="size" value="16"><span>16 <small>цукерок</small></span></label>
+            </div>
+          </fieldset>
+          <div class="box-top">
+            <p class="box-count" id="boxCount"><b>0</b> / 9 <span>цукерок</span></p>
+            <p class="visually-hidden" id="boxLive" aria-live="polite"></p>
+          </div>
+          <div class="box" id="box">
+            <span class="box-label" aria-hidden="true">Оксамит</span>
+            <div class="box-grid" id="boxGrid" role="group" aria-label="Комірки коробки"></div>
+          </div>
+          <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+          <div class="box-actions">
+            <button class="btn btn--ghost" type="button" id="randomBtn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h4v4M20 4l-6 6M4 20l6-6M16 20h4v-4M20 20 4 4"/></g></svg>
+              Заповнити випадково
+            </button>
+            <button class="btn btn--ghost" type="button" id="clearBtn">Очистити</button>
+          </div>
+        </div>
+
+        <div class="panel palette reveal d1">
+          <div class="panel-head">
+            <h3>Цукерки</h3>
+            <p class="panel-note" id="paletteNote">Натисніть, щоб покласти в коробку</p>
+          </div>
+          <ul class="picks" id="picks" aria-describedby="paletteNote"></ul>
+        </div>
+
+        <div class="side reveal d2">
+          <div class="panel">
+            <h3>Листівка</h3>
+            <div class="field">
+              <label for="cardText">Текст листівки</label>
+              <textarea class="input" id="cardText" maxlength="160" rows="3" placeholder="Наприклад: З першим снігом! Нехай буде тепло" aria-describedby="cardCounter"></textarea>
+              <p class="hint counter" id="cardCounter">0 / 160</p>
+            </div>
+            <div class="postcard" aria-hidden="true">
+              <svg><use href="#mono"/></svg>
+              <p class="postcard-text placeholder" id="cardPreview">Ваші теплі слова з’являться тут</p>
+              <span class="postcard-sign">з любов’ю · Оксамит</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <fieldset>
+              <legend>Дата доставки</legend>
+              <div class="pills" id="dayPills"></div>
+              <p class="hint" id="deliveryHint">Найближча доставка — завтра.</p>
+            </fieldset>
+          </div>
+
+          <div class="panel summary" aria-labelledby="sumTitle">
+            <h3 id="sumTitle">Підсумок</h3>
+            <dl>
+              <div class="row"><dt>Коробка</dt><dd id="sumBox">на 9 · 120 ₴</dd></div>
+              <div class="row"><dt>Цукерки</dt><dd id="sumCandies">0 ₴</dd></div>
+              <div class="row"><dt>Доставка</dt><dd id="sumDate">—</dd></div>
+              <div class="row total"><dt>Разом</dt><dd id="sumTotal">120 ₴</dd></div>
+            </dl>
+            <div class="mini-row" id="miniRow" aria-hidden="true"></div>
+            <p class="contents-list" id="contents"></p>
+            <button class="btn" type="button" id="addBoxBtn" disabled aria-describedby="addHint">
+              <svg aria-hidden="true"><use href="#i-bag"/></svg>Додати в кошик
+            </button>
+            <p class="hint" id="addHint" style="margin-top:10px">Залишилось заповнити 9 комірок.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOLIDAY -->
+  <section class="section bordeaux holiday" id="holiday" aria-labelledby="holTitle">
+    <div class="container holiday-grid">
+      <div class="holiday-head reveal">
+        <p class="eyebrow">Святкове</p>
+        <h2 id="holTitle">Адвент-календар <em>на 24 дні</em></h2>
+        <p class="lead">Щодня до Святвечора — маленький подарунок від ательє. Відкривайте віконце дня: папір рветься, а всередині — сюрприз.</p>
+      </div>
+      <figure class="holiday-photo reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/1839882/pexels-photo-1839882.jpeg?auto=compress&cs=tinysrgb&w=1200" width="1200" height="1500" alt="Святкова чашка гарячого шоколаду в теплому зимовому світлі">
+      </figure>
+      <div class="holiday-cal reveal d1">
+        <div class="advent" id="advent" role="group" aria-label="Адвент-календар"></div>
+        <p class="demo-note" id="demoNote" hidden></p>
+        <div class="gift" id="gift" role="status" aria-live="polite">
+          <svg aria-hidden="true"><use href="#i-gift"/></svg>
+          <div>
+            <h3 id="giftTitle">Відкрийте віконце дня</h3>
+            <p id="giftText">Позначене золотою рамкою віконце чекає саме на вас.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPORATE -->
+  <section class="section light" id="corporate" aria-labelledby="corpTitle">
+    <div class="container corp-grid">
+      <div class="corp-photo reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/19512542/pexels-photo-19512542.jpeg?auto=compress&cs=tinysrgb&w=1400" width="1400" height="1120" alt="Подарункова коробка з асорті шоколадних цукерок">
+      </div>
+      <div class="reveal d1">
+        <p class="eyebrow">Корпоративним клієнтам</p>
+        <h2 id="corpTitle">Подарунки, які <em>пам’ятають</em></h2>
+        <p class="lead">Збираємо коробки для команди, партнерів і клієнтів: фірмова стрічка, листівки з вашим текстом, доставка за списком адрес.</p>
+        <ul class="corp-points">
+          <li>Від 10 коробок, індивідуальний склад і пакування</li>
+          <li>Гравіювання логотипа на кришці</li>
+          <li>Документи для бухгалтерії та оплата за рахунком</li>
+        </ul>
+        <form class="form" id="corpForm" novalidate>
+          <div class="field">
+            <label for="fCompany">Компанія</label>
+            <input class="input" id="fCompany" name="company" autocomplete="organization" placeholder="Назва компанії" required>
+          </div>
+          <div class="field">
+            <label for="fQty">Кількість коробок</label>
+            <input class="input" id="fQty" name="qty" type="number" inputmode="numeric" min="10" step="1" value="10" required aria-describedby="fQtyHint">
+            <p class="hint" id="fQtyHint">Мінімум — 10 коробок.</p>
+          </div>
+          <div class="field">
+            <label for="fDate">Бажана дата</label>
+            <input class="input" id="fDate" name="date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="fContact">Телефон або e-mail</label>
+            <input class="input" id="fContact" name="contact" autocomplete="on" placeholder="+380 67 000 00 00 або email" required>
+          </div>
+          <div class="field full">
+            <label for="fNote">Побажання <span style="font-weight:400">(необов’язково)</span></label>
+            <textarea class="input" id="fNote" name="note" rows="3" placeholder="Смаки, текст листівки, адреси…"></textarea>
+          </div>
+          <p class="hint full" id="formError" role="alert"></p>
+          <button class="btn full" type="submit">Надіслати запит</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section milk" aria-labelledby="revTitle">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Відгуки</p>
+        <h2 id="revTitle">Що кажуть <em>після першої цукерки</em></h2>
+        <p class="concept-note">Приклади відгуків — концепт-проєкт</p>
+      </div>
+      <div class="reviews" role="region" aria-label="Відгуки клієнтів" tabindex="0">
+        <figure class="review reveal d0">
+          <svg class="review-quote" aria-hidden="true"><use href="#i-quote"/></svg>
+          <svg class="stars" viewBox="0 0 92 16" role="img" aria-label="Оцінка: 5 з 5"><use href="#i-star" width="16" height="16"/><use href="#i-star" x="19" width="16" height="16"/><use href="#i-star" x="38" width="16" height="16"/><use href="#i-star" x="57" width="16" height="16"/><use href="#i-star" x="76" width="16" height="16"/></svg>
+          <blockquote><p>Замовила коробку на 9 мамі на день народження. Вона сфотографувала її з усіх боків, перш ніж відкрити, а листівку досі тримає на холодильнику.</p></blockquote>
+          <figcaption><span class="review-name">Олена, Київ</span><span class="review-order">коробка на 9</span></figcaption>
+        </figure>
+        <figure class="review reveal d1">
+          <svg class="review-quote" aria-hidden="true"><use href="#i-quote"/></svg>
+          <svg class="stars" viewBox="0 0 92 16" role="img" aria-label="Оцінка: 5 з 5"><use href="#i-star" width="16" height="16"/><use href="#i-star" x="19" width="16" height="16"/><use href="#i-star" x="38" width="16" height="16"/><use href="#i-star" x="57" width="16" height="16"/><use href="#i-star" x="76" width="16" height="16"/></svg>
+          <blockquote><p>Солона карамель — це небезпечно. Брав собі 6 штук «на тиждень», закінчились за вечір. Тепер замовляю одразу 16.</p></blockquote>
+          <figcaption><span class="review-name">Андрій, Львів</span><span class="review-order">коробка на 16</span></figcaption>
+        </figure>
+        <figure class="review reveal d2">
+          <svg class="review-quote" aria-hidden="true"><use href="#i-quote"/></svg>
+          <svg class="stars" viewBox="0 0 92 16" role="img" aria-label="Оцінка: 5 з 5"><use href="#i-star" width="16" height="16"/><use href="#i-star" x="19" width="16" height="16"/><use href="#i-star" x="38" width="16" height="16"/><use href="#i-star" x="57" width="16" height="16"/><use href="#i-star" x="76" width="16" height="16"/></svg>
+          <blockquote><p>Брали 40 коробок для команди під Новий рік. Допомогли з підбором смаків, кожну підписали від руки, доставили день у день.</p></blockquote>
+          <figcaption><span class="review-name">Марина, Дніпро</span><span class="review-order">корпоративне замовлення</span></figcaption>
+        </figure>
+        <figure class="review reveal d0">
+          <svg class="review-quote" aria-hidden="true"><use href="#i-quote"/></svg>
+          <svg class="stars" viewBox="0 0 92 16" role="img" aria-label="Оцінка: 5 з 5"><use href="#i-star" width="16" height="16"/><use href="#i-star" x="19" width="16" height="16"/><use href="#i-star" x="38" width="16" height="16"/><use href="#i-star" x="57" width="16" height="16"/><use href="#i-star" x="76" width="16" height="16"/></svg>
+          <blockquote><p>Адвент-календар купила доньці, а відкриваємо вдвох щоранку. Найкращий ранковий ритуал цієї зими.</p></blockquote>
+          <figcaption><span class="review-name">Ірина, Одеса</span><span class="review-order">адвент-календар</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer dark">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Оксамит — на початок сторінки">
+          <svg aria-hidden="true"><use href="#mono"/></svg>
+          <span><span class="brand-name">Оксамит</span><span class="brand-sub">шоколадне ательє</span></span>
+        </a>
+        <p>Авторський шоколад ручної роботи. Концепт для портфоліо — контакти й адреса умовні.</p>
+      </div>
+      <div>
+        <h3>Магазин</h3>
+        <ul>
+          <li><a href="#collection">Колекція</a></li>
+          <li><a href="#builder">Зібрати коробку</a></li>
+          <li><a href="#holiday">Святкове</a></li>
+          <li><a href="#corporate">Корпоративним клієнтам</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Контакти</h3>
+        <ul>
+          <li><a href="tel:+380000000000">+380 00 000 00 00</a></li>
+          <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+          <li>[АДРЕСА АТЕЛЬЄ]</li>
+          <li>Пн–Нд, 10:00–20:00</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Соцмережі</h3>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6" fill="currentColor"/></g></svg></a>
+          <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 4.5 3.5 11l5.5 2 2 6 3-3.5 4.5 3.5 2-14.5ZM9 13l8-5.5-6 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></a>
+        </div>
+        <h3 style="margin-top:26px">Оплата</h3>
+        <div class="pay" aria-label="Способи оплати">
+          <span>VISA</span><span>Mastercard</span><span>Apple Pay</span><span>Google Pay</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Оксамит — концепт-проєкт</span>
+      <span>Фото: Pexels</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="cart" id="cartDlg" aria-labelledby="cartTitle">
+  <div class="cart-head">
+    <h2 id="cartTitle">Кошик</h2>
+    <button class="icon-btn" type="button" id="cartClose" aria-label="Закрити кошик">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let RM = mq.matches;
+  const uah = n => `${n.toLocaleString('uk-UA')} ₴`;
+  const plural = (n, one, few, many) => {
+    const m10 = n % 10, m100 = n % 100;
+    if (m10 === 1 && m100 !== 11) return one;
+    if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+    return many;
+  };
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+  };
+
+
+  /* ---------------- data ---------------- */
+  const TYPE_LABEL = { dark: 'Темний', milk: 'Молочний', white: 'Білий', nut: 'Горіхові' };
+  const CANDIES = [
+    { id: 'cherry',    name: 'Темна вишня',        taste: '70% какао, вишня в бренді, какао-крупка',      price: 58, types: ['dark'],         img: 'https://images.pexels.com/photos/918328/pexels-photo-918328.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Темна вишня»: темний шоколад з вишнею, крупний план' },
+    { id: 'caramel',   name: 'Солона карамель',    taste: 'молочний 38%, тягуча карамель і флер-де-сель',  price: 52, types: ['milk'],         img: 'https://images.pexels.com/photos/6213662/pexels-photo-6213662.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Солона карамель»: молочний шоколад з карамеллю, крупний план' },
+    { id: 'praline',   name: 'Фундук-праліне',     taste: 'хрусткий праліне з карамелізованим фундуком',   price: 55, types: ['milk', 'nut'],  img: 'https://images.pexels.com/photos/7625247/pexels-photo-7625247.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Фундук-праліне»: молочний шоколад з фундуком, крупний план' },
+    { id: 'raspberry', name: 'Біла малина',        taste: 'білий шоколад, сублімована малина, ваніль',      price: 54, types: ['white'],        img: 'https://images.pexels.com/photos/10189142/pexels-photo-10189142.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Біла малина»: білий шоколад з малиною, крупний план' },
+    { id: 'almond',    name: 'Мигдаль і апельсин', taste: 'темний 64%, смажений мигдаль, цукати цедри',     price: 56, types: ['dark', 'nut'],  img: 'https://images.pexels.com/photos/6261618/pexels-photo-6261618.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Цукерка «Мигдаль і апельсин»: темний шоколад з мигдалем і цедрою, крупний план' },
+    { id: 'truffle',   name: 'Класичний трюфель',  taste: 'вершковий ганаш, обкатаний у какао-пудрі',       price: 50, types: ['dark'],         img: 'https://images.pexels.com/photos/10167723/pexels-photo-10167723.jpeg?auto=compress&cs=tinysrgb&w=800', alt: '«Класичний трюфель» у какао-пудрі, крупний план' }
+  ];
+  const bonHTML = (c, cls = '') => `<span class="bon${cls}" aria-hidden="true"><img src="${c.img.replace('w=800', 'w=240')}" alt="" loading="lazy" decoding="async"></span>`;
+  const miniRow = ids => ids.filter(id => byId[id]).map(id => bonHTML(byId[id])).join('');
+  const esc = t => String(t).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  const byId = Object.fromEntries(CANDIES.map(c => [c.id, c]));
+  const BOX_PRICE = { 6: 90, 9: 120, 16: 180 };
+  const COLS = { 6: 3, 9: 3, 16: 4 };
+
+  /* ---------------- toast ---------------- */
+  const toastEl = $('#toast'); let toastT;
+  function toast(msg) {
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('show'), 2600);
+  }
+
+  /* ---------------- header & nav ---------------- */
+  const header = $('.site-header'), heroWrap = $('#heroWrap');
+  const burger = $('#burger'), nav = $('#nav');
+  function headerState() {
+    const end = heroWrap.offsetTop + heroWrap.offsetHeight - header.offsetHeight - 10;
+    header.classList.toggle('solid', window.scrollY > end || nav.classList.contains('open'));
+  }
+  burger.addEventListener('click', () => {
+    const open = !nav.classList.contains('open');
+    nav.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Закрити меню' : 'Відкрити меню');
+    headerState();
+  });
+  nav.addEventListener('click', e => { if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Відкрити меню'); headerState(); } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { burger.click(); burger.focus(); } });
+
+  /* ---------------- hero: torn paper ---------------- */
+  const hero = {
+    svg: $('#heroSvg'), sec: $('#hero'), img: $('#heroImg'), content: $('#heroContent'),
+    maskRect: $('#maskRect'), paper: $('#paper'), holeM: $('#holeM'), holeC: $('#holeC'),
+    shadow: $('#holeShadow'), shadow2: $('#holeShadow2'), fibA: $('#fiberA'), fibB: $('#fiberB'), flap: $('#flap'), flapG: $('#flapG'), flapFiber: $('#flapFiber'),
+    w: 0, h: 0, cx: 0, cy: 0, sMax: 3
+  };
+  function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  const HN = 360;
+  // періодичний value-noise з косинусною інтерполяцією: freq хвиль на коло
+  function waveNoise(r, freq) {
+    const vals = Array.from({ length: freq }, () => r() * 2 - 1);
+    return Array.from({ length: HN }, (_, i) => {
+      const x = (i / HN) * freq, i0 = Math.floor(x) % freq, i1 = (i0 + 1) % freq, t = x - Math.floor(x);
+      const u = (1 - Math.cos(t * Math.PI)) / 2;
+      return vals[i0] * (1 - u) + vals[i1] * u;
+    });
+  }
+  function buildHero() {
+    const w = hero.sec.clientWidth, h = hero.sec.clientHeight;
+    hero.w = w; hero.h = h;
+    hero.svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    [hero.maskRect, hero.paper].forEach(el => { el.setAttribute('width', w); el.setAttribute('height', h); });
+    const narrow = w < 640;
+    // вільне місце між хедером і заголовком; отвір — не більше ~55% висоти екрана
+    const top = header.offsetHeight + (narrow ? 16 : 24);
+    const bottom = Math.max(top + 140, hero.content.offsetTop - (narrow ? 22 : 34));
+    const avail = Math.min(bottom - top, h * 0.55);
+    const r = rng(41);
+    const mid = waveNoise(r, 9), small = waveNoise(r, 27), fine = waveNoise(r, 90);
+    const fw1 = waveNoise(r, 9), fw2 = waveNoise(r, 37);
+    // 6 великих несиметричних виступів (+) і заглибин (−): [кут, амплітуда, ширина]
+    const BUMPS = [[-2.5, .10, .42], [-1.45, -.13, .30], [-0.5, .07, .30], [0.85, -.06, .30], [1.8, .13, .40], [2.75, -.09, .28]];
+    const CUT = 0.8; // лінія загину праворуч
+    const unit = [], fiber = [];
+    let cTop = Infinity, cBot = -Infinity, yMin = Infinity, yMax = -Infinity;
+    for (let i = 0; i < HN; i++) {
+      const t = (i / HN) * Math.PI * 2 - Math.PI;
+      let k = 1 + 0.03 * mid[i] + 0.013 * small[i] + 0.006 * fine[i] + (r() - 0.5) * 0.004;
+      for (const [ang, A, wd] of BUMPS) { const d = Math.atan2(Math.sin(t - ang), Math.cos(t - ang)); k += A * Math.exp(-((d / wd) ** 2)); }
+      k *= 1 + 0.03 * Math.cos(t + 2.6);
+      let ux = Math.cos(t) * k; const uy = Math.sin(t) * k;
+      if (ux > CUT) { ux = CUT + (r() - 0.5) * 0.003; cTop = Math.min(cTop, uy); cBot = Math.max(cBot, uy); }
+      yMin = Math.min(yMin, uy); yMax = Math.max(yMax, uy);
+      unit.push([ux, uy]);
+      fiber.push(Math.max(3, Math.min(6, 4.5 + 1.1 * fw1[i] + 0.6 * fw2[i] + (r() - 0.5) * 0.5)));
+    }
+    const rx = Math.min(w * (narrow ? 0.37 : 0.38), 660);
+    const ry = Math.min(avail / (yMax - yMin), rx * (narrow ? 0.72 : 0.42));
+    const cx = w / 2 - rx * 0.05;
+    const cy = top + (bottom - top) / 2 - ((yMin + yMax) / 2) * ry;
+    Object.assign(hero, { cx, cy, rx, ry, unit, fiber });
+
+    // загнутий край: виходить із лінії загину, торці — продовження рваного краю
+    const xL = cx + CUT * rx - 1.5;
+    const W = rx * (narrow ? 0.17 : 0.12);
+    const yT = cy + cTop * ry - ry * 0.05, yB = cy + cBot * ry + ry * 0.05;
+    const n = 9, topPts = [], botPts = [];
+    for (let i = 0; i <= n; i++) {
+      const q = i / n;
+      topPts.push([xL + W * q, yT - q * ry * 0.07 + (i && i < n ? (r() - 0.5) * ry * 0.06 : 0)]);
+      botPts.push([xL + W * 0.94 * q, yB + q * ry * 0.04 + (i && i < n ? (r() - 0.5) * ry * 0.06 : 0)]);
+    }
+    const P = pt => pt[0].toFixed(1) + ' ' + pt[1].toFixed(1);
+    const end = topPts[n], endB = botPts[n];
+    let f = 'M' + topPts.map(P).join('L');
+    f += `Q${(xL + W * 1.22).toFixed(1)} ${((end[1] + endB[1]) / 2).toFixed(1)} ${P(endB)}`;
+    f += 'L' + botPts.slice().reverse().map(P).join('L') + 'Z';
+    hero.flap.setAttribute('d', f);
+    hero.flapFiber.setAttribute('d', 'M' + topPts.map(P).join('L') + 'M' + botPts.map(P).join('L'));
+
+    const dx = Math.max(cx, w - cx) + 40, dy = Math.max(cy, h - cy) + 40;
+    hero.sMax = Math.sqrt((dx / (rx * 0.62)) ** 2 + (dy / (ry * 0.7)) ** 2) * 0.75;
+    updateHero();
+  }
+  const toD = pts => 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L') + 'Z';
+  function edge(s) {
+    const { cx, cy, rx, ry, unit, fiber } = hero;
+    const inner = unit.map(([ux, uy]) => [cx + ux * rx * s, cy + uy * ry * s]);
+    const outA = [], outB = [];
+    for (let i = 0; i < HN; i++) {
+      const p = inner[i], a = inner[(i - 1 + HN) % HN], b = inner[(i + 1) % HN];
+      let nx = b[1] - a[1], ny = -(b[0] - a[0]);
+      const len = Math.hypot(nx, ny) || 1; nx /= len; ny /= len;
+      if (nx * (p[0] - cx) + ny * (p[1] - cy) < 0) { nx = -nx; ny = -ny; }
+      outA.push([p[0] + nx * fiber[i], p[1] + ny * fiber[i]]);
+      outB.push([p[0] + nx * fiber[i] * 0.55, p[1] + ny * fiber[i] * 0.55]);
+    }
+    return { inner, outA, outB };
+  }
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  function updateHero() {
+    if (!hero.unit) return;
+    let p = 0;
+    if (!RM) {
+      const rect = heroWrap.getBoundingClientRect();
+      const span = heroWrap.offsetHeight - hero.h;
+      p = span > 0 ? clamp(-rect.top / span) : 0;
+    }
+    const e = ease(p);
+    const s = 1 + (hero.sMax - 1) * e;
+    const { inner, outA, outB } = edge(s);
+    const dIn = toD(inner), dInRev = toD(inner.slice().reverse());
+    [hero.holeM, hero.holeC, hero.shadow, hero.shadow2].forEach(el => el.setAttribute('d', dIn));
+    hero.fibA.setAttribute('d', toD(outA) + dInRev);
+    hero.fibB.setAttribute('d', toD(outB) + dInRev);
+    hero.flapG.setAttribute('transform', `translate(${hero.cx} ${hero.cy}) scale(${s}) translate(${-hero.cx} ${-hero.cy})`);
+    hero.flapG.style.opacity = clamp(1 - p * 2.4);
+    hero.img.style.transform = `scale(${(1.12 - 0.12 * e).toFixed(4)})`;
+    const c = clamp(1 - (p - 0.08) / 0.32);
+    hero.content.style.opacity = c;
+    hero.content.style.transform = `translateY(${(1 - c) * -24}px)`;
+    hero.content.style.visibility = c < 0.02 ? 'hidden' : '';
+  }
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => { updateHero(); headerState(); ticking = false; });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  let rT; window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(() => { buildHero(); headerState(); }, 120); });
+  mq.addEventListener?.('change', ev => { RM = ev.matches; document.documentElement.classList.toggle('motion', !RM); buildHero(); revealAll(); });
+
+  /* ---------------- collection ---------------- */
+  const cardsEl = $('#cards');
+  cardsEl.innerHTML = CANDIES.map((c, i) => `
+    <article class="card reveal d${i % 3}" data-types="${c.types.join(' ')}">
+      <figure class="ph">
+        <img loading="lazy" decoding="async" src="${c.img}" width="800" height="800" alt="${c.alt}">
+        <span class="card-tag">${c.types.map(t => TYPE_LABEL[t]).join(' · ')}</span>
+      </figure>
+      <div class="card-body">
+        <h3>${c.name}</h3>
+        <p class="card-taste">${c.taste}</p>
+        <div class="card-foot">
+          <span class="price">${c.price} ₴<small>/ шт</small></span>
+          <button class="add-mini" type="button" data-add="${c.id}" aria-label="Покласти «${c.name}» у коробку">
+            <svg aria-hidden="true"><use href="#i-plus"/></svg>У коробку
+          </button>
+        </div>
+      </div>
+    </article>`).join('');
+
+  const filterBtns = $$('#filters .chip');
+  $('#filters').addEventListener('click', e => {
+    const b = e.target.closest('[data-filter]'); if (!b) return;
+    const f = b.dataset.filter;
+    filterBtns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    let n = 0;
+    $$('.card', cardsEl).forEach(card => {
+      const show = f === 'all' || card.dataset.types.split(' ').includes(f);
+      card.hidden = !show; if (show) { n++; card.classList.add('in'); }
+    });
+    $('#filterStatus').textContent = `Показано ${n} ${plural(n, 'цукерку', 'цукерки', 'цукерок')}`;
+  });
+  cardsEl.addEventListener('click', e => {
+    const b = e.target.closest('[data-add]'); if (!b) return;
+    addCandy(b.dataset.add, b, true);
+  });
+
+  /* ---------------- builder ---------------- */
+  const state = { size: 9, cells: Array(9).fill(null) };
+  const grid = $('#boxGrid'), picks = $('#picks');
+  picks.innerHTML = CANDIES.map(c => `
+    <li><button class="pick" type="button" data-pick="${c.id}" aria-label="Покласти «${c.name}» у коробку, ${c.price} гривень">
+      ${bonHTML(c)}
+      <span><span class="pick-name">${c.name}</span><span class="pick-type">${c.types.map(t => TYPE_LABEL[t]).join(', ')}</span></span>
+      <span class="pick-price">${c.price} ₴</span>
+    </button></li>`).join('');
+
+  function renderBox(opts = {}) {
+    grid.style.setProperty('--cols', COLS[state.size]);
+    grid.innerHTML = state.cells.map((id, i) => {
+      const c = id && byId[id];
+      const cls = ['cell', c ? 'filled' : '', opts.landing === i ? 'landing' : '', opts.pop === i ? 'pop' : ''].join(' ');
+      return c
+        ? `<button type="button" class="${cls}" data-cell="${i}" aria-label="Комірка ${i + 1}: ${c.name}. Натисніть, щоб прибрати"><span class="cup"></span>${bonHTML(c)}</button>`
+        : `<button type="button" class="${cls}" data-cell="${i}" disabled aria-label="Комірка ${i + 1}: порожня"><span class="cup"></span><span class="num" aria-hidden="true">${i + 1}</span></button>`;
+    }).join('');
+    renderSummary();
+  }
+  function filledCount() { return state.cells.filter(Boolean).length; }
+  function renderSummary() {
+    const n = filledCount(), size = state.size, left = size - n;
+    $('#boxCount').innerHTML = `<b>${n}</b> / ${size} <span>цукерок</span>`;
+    $('#progressBar').style.width = `${(n / size) * 100}%`;
+    const candiesSum = state.cells.reduce((s, id) => s + (id ? byId[id].price : 0), 0);
+    $('#sumBox').textContent = `на ${size} · ${uah(BOX_PRICE[size])}`;
+    $('#sumCandies').textContent = uah(candiesSum);
+    $('#sumTotal').textContent = uah(BOX_PRICE[size] + candiesSum);
+    const counts = {};
+    state.cells.forEach(id => { if (id) counts[id] = (counts[id] || 0) + 1; });
+    $('#miniRow').innerHTML = miniRow(state.cells);
+    $('#contents').textContent = Object.keys(counts).length
+      ? Object.entries(counts).map(([id, k]) => `${byId[id].name} × ${k}`).join(' · ')
+      : 'Коробка поки порожня.';
+    const btn = $('#addBoxBtn'), hint = $('#addHint');
+    const full = left === 0;
+    btn.disabled = !full;
+    hint.textContent = full
+      ? 'Коробка заповнена — можна додавати в кошик.'
+      : `Залишилось заповнити ${left} ${plural(left, 'комірку', 'комірки', 'комірок')}.`;
+  }
+
+  function inView(el) {
+    const r = el.getBoundingClientRect();
+    return r.bottom > 0 && r.top < window.innerHeight;
+  }
+  function fly(fromEl, toEl, id) {
+    if (RM || !fromEl || !toEl || !inView(fromEl) || !inView(toEl) || !Element.prototype.animate) return Promise.resolve();
+    const a = fromEl.getBoundingClientRect(), b = toEl.getBoundingClientRect();
+    const size = b.width * 0.68;
+    const g = document.createElement('span');
+    g.className = 'bon flyer';
+    g.innerHTML = `<img src="${byId[id].img.replace('w=800', 'w=240')}" alt="">`;
+    Object.assign(g.style, { position: 'fixed', left: `${b.left + (b.width - size) / 2}px`, top: `${b.top + (b.height - size) / 2}px`, width: `${size}px`, zIndex: 90, pointerEvents: 'none' });
+    document.body.appendChild(g);
+    const dx = (a.left + a.width / 2) - (b.left + b.width / 2);
+    const dy = (a.top + a.height / 2) - (b.top + b.height / 2);
+    const lift = Math.min(120, Math.abs(dx) * 0.25 + 40);
+    const anim = g.animate([
+      { transform: `translate(${dx}px,${dy}px) scale(.7)`, opacity: .6 },
+      { transform: `translate(${dx * 0.45}px,${dy * 0.45 - lift}px) scale(1.15)`, opacity: 1, offset: .5 },
+      { transform: 'translate(0,0) scale(1)', opacity: 1 }
+    ], { duration: 560, easing: 'cubic-bezier(.3,.7,.25,1)' });
+    return anim.finished.catch(() => {}).then(() => g.remove());
+  }
+
+  function addCandy(id, srcEl, fromCatalog) {
+    const idx = state.cells.indexOf(null);
+    if (idx === -1) {
+      toast(`Коробка вже заповнена. Приберіть цукерку або оберіть більший розмір.`);
+      return;
+    }
+    state.cells[idx] = id;
+    const animate = !RM && srcEl && inView(grid);
+    renderBox({ landing: animate ? idx : -1 });
+    const cell = grid.querySelector(`[data-cell="${idx}"]`);
+    if (animate) {
+      fly(srcEl.querySelector('.bon') || srcEl, cell, id).then(() => {
+        const c = grid.querySelector(`[data-cell="${idx}"]`);
+        if (c && state.cells[idx] === id) { c.classList.remove('landing'); c.classList.add('pop'); }
+      });
+    }
+    const n = filledCount();
+    if (fromCatalog || !inView(grid)) toast(`«${byId[id].name}» у коробці · ${n} з ${state.size}`);
+    else $('#boxLive').textContent = (`«${byId[id].name}» додано. Заповнено ${n} з ${state.size}`);
+  }
+
+  picks.addEventListener('click', e => {
+    const b = e.target.closest('[data-pick]'); if (b) addCandy(b.dataset.pick, b, false);
+  });
+  grid.addEventListener('click', e => {
+    const b = e.target.closest('.cell.filled'); if (!b) return;
+    const i = +b.dataset.cell, name = byId[state.cells[i]].name;
+    const done = () => {
+      state.cells[i] = null; renderBox();
+      // фокус лишаємо поруч: на наступну заповнену комірку або на палітру
+      const target = grid.querySelector('.cell.filled') || picks.querySelector('.pick');
+      target?.focus({ preventScroll: true });
+      $('#boxLive').textContent = (`«${name}» прибрано. Заповнено ${filledCount()} з ${state.size}`);
+    };
+    if (RM) return done();
+    b.classList.add('leaving'); setTimeout(done, 260);
+  });
+  $('#sizeSeg').addEventListener('change', e => {
+    const size = +e.target.value;
+    const kept = state.cells.filter(Boolean);
+    const dropped = Math.max(0, kept.length - size);
+    state.size = size;
+    state.cells = Array.from({ length: size }, (_, i) => kept[i] || null);
+    renderBox();
+    if (dropped) toast(`Коробка менша — ${dropped} ${plural(dropped, 'цукерку', 'цукерки', 'цукерок')} прибрано`);
+  });
+  $('#randomBtn').addEventListener('click', () => {
+    const empty = state.cells.map((v, i) => v ? -1 : i).filter(i => i >= 0);
+    if (!empty.length) { toast('Коробка вже повна'); return; }
+    empty.forEach(i => { state.cells[i] = CANDIES[Math.floor(Math.random() * CANDIES.length)].id; });
+    renderBox();
+    if (!RM) empty.forEach((i, k) => {
+      const c = grid.querySelector(`[data-cell="${i}"] .bon`);
+      c?.animate([{ transform: 'scale(.2) translateY(-40%)', opacity: 0 }, { transform: 'scale(1.08)', opacity: 1, offset: .7 }, { transform: 'scale(1)', opacity: 1 }], { duration: 420, delay: k * 45, easing: 'cubic-bezier(.3,.7,.25,1)', fill: 'backwards' });
+    });
+    toast('Готово! Заповнили випадковим асорті');
+  });
+  $('#clearBtn').addEventListener('click', () => { state.cells = Array(state.size).fill(null); renderBox(); toast('Коробку очищено'); });
+
+  // листівка
+  const cardText = $('#cardText'), cardPreview = $('#cardPreview');
+  cardText.addEventListener('input', () => {
+    const v = cardText.value.trim();
+    cardPreview.textContent = v || 'Ваші теплі слова з’являться тут';
+    cardPreview.classList.toggle('placeholder', !v);
+    $('#cardCounter').textContent = `${cardText.value.length} / 160`;
+  });
+
+  // дата доставки
+  const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  const today = new Date(); today.setHours(12, 0, 0, 0);
+  const tomorrow = addDays(today, 1);
+  const dayPills = $('#dayPills');
+  const days = Array.from({ length: 7 }, (_, i) => addDays(today, i + 1));
+  dayPills.innerHTML = days.map((d, i) => `
+    <label class="pill"><input type="radio" name="delivery" value="${iso(d)}"${i === 0 ? ' checked' : ''}>
+      <span class="pill-wd" aria-hidden="true">${d.toLocaleDateString('uk-UA', { weekday: 'short' })}</span>
+      <span class="pill-d" aria-hidden="true">${d.getDate()}</span>
+      <span class="visually-hidden">${i === 0 ? 'завтра, ' : ''}${d.toLocaleDateString('uk-UA', { weekday: 'long', day: 'numeric', month: 'long' })}</span>
+    </label>`).join('');
+  let deliveryDate = iso(tomorrow);
+  const fmtDate = v => { const [y, m, d] = v.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString('uk-UA', { weekday: 'short', day: 'numeric', month: 'long' }); };
+  function syncDate() { $('#sumDate').textContent = fmtDate(deliveryDate); }
+  dayPills.addEventListener('change', e => { deliveryDate = e.target.value; syncDate(); });
+
+  /* ---------------- cart ---------------- */
+  let cart = store.get('oksamyt-cart', []);
+  const dlg = $('#cartDlg');
+  function renderCart() {
+    const n = cart.length, el = $('#cartCount');
+    el.textContent = n; el.dataset.zero = String(n === 0);
+    $('#cartBtn').setAttribute('aria-label', `Кошик, товарів: ${n}`);
+    const body = $('#cartBody');
+    if (!n) { body.innerHTML = '<p class="cart-empty">Тут поки порожньо. Зберіть свою першу коробку.</p>'; return; }
+    const total = cart.reduce((s, x) => s + x.price, 0);
+    body.innerHTML = cart.map((x, i) => `
+      <div class="cart-item">
+        <strong>${esc(x.title)}</strong><span>${uah(x.price)}</span>
+        ${x.ids ? `<div class="mini-row" aria-hidden="true">${miniRow(x.ids)}</div>` : ''}
+        <p>${esc(x.details)}</p>
+        <button class="link-btn" type="button" data-remove="${i}">Прибрати</button>
+      </div>`).join('') + `<div class="cart-total"><span>Разом</span><b>${uah(total)}</b></div>
+      <p class="hint" style="margin-top:10px">Це концепт: оформлення замовлення не підключене.</p>`;
+  }
+  $('#cartBody').addEventListener('click', e => {
+    const b = e.target.closest('[data-remove]'); if (!b) return;
+    cart.splice(+b.dataset.remove, 1); store.set('oksamyt-cart', cart); renderCart();
+    $('#cartClose').focus();
+  });
+  $('#cartBtn').addEventListener('click', () => { renderCart(); dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''); });
+  $('#cartClose').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  $('#addBoxBtn').addEventListener('click', () => {
+    if (filledCount() < state.size) return;
+    const candiesSum = state.cells.reduce((s, id) => s + byId[id].price, 0);
+    const msg = cardText.value.trim();
+    cart.push({
+      title: `Коробка на ${state.size} ${plural(state.size, 'цукерку', 'цукерки', 'цукерок')}`,
+      price: BOX_PRICE[state.size] + candiesSum,
+      ids: state.cells.slice(),
+      details: `${$('#contents').textContent}. Доставка: ${fmtDate(deliveryDate)}.${msg ? ` Листівка: «${msg}»` : ''}`
+    });
+    store.set('oksamyt-cart', cart); renderCart();
+    const c = $('#cartCount'); c.classList.remove('bump'); void c.offsetWidth; if (!RM) c.classList.add('bump');
+    toast('Коробку додано в кошик');
+    state.cells = Array(state.size).fill(null); renderBox();
+  });
+
+  /* ---------------- advent ---------------- */
+  const GIFTS = [
+    'Мініатюрний трюфель із глінтвейновими спеціями до будь-якого замовлення.',
+    'Листівка з ручним леттерингом — безкоштовно.',
+    '−10% на коробку з 16 цукерок.',
+    'Рецепт гарячого шоколаду від нашого шоколатьє.',
+    'Безкоштовна доставка по місту.',
+    'Шоколадна бомбочка з маршмелоу в подарунок.',
+    'Оксамитова стрічка на коробку — за наш рахунок.',
+    'Дегустаційний сет із трьох какао-плиток.',
+    'Подвійні бонуси за сьогоднішнє замовлення.',
+    'Плейлист для зимового вечора від команди ательє.',
+    'Цукерка «Біла малина» в подарунок.',
+    '−15% на святкову коробку.',
+    'Розіграш двох місць на майстер-клас в ательє.',
+    'Гравіювання імені на кришці коробки безкоштовно.',
+    'Какао-боби в цукровій глазурі до замовлення.',
+    'Новий смак дня: груша й кардамон.',
+    'Подарункова картка на 200 ₴ при замовленні від 1000 ₴.',
+    'Крафтове пакування з сургучною печаткою.',
+    'Чашка какао в нашому ательє — від нас.',
+    '−10% на корпоративне замовлення.',
+    'Два трюфелі з пряною апельсиновою цедрою.',
+    'Пріоритетна доставка напередодні свят.',
+    'Листівка з різдвяним віршем, написаним від руки.',
+    'Святковий сюрприз у кожній коробці. З Різдвом!'
+  ];
+  const ORDER = [7, 15, 2, 21, 11, 18, 4, 13, 24, 9, 1, 16, 20, 6, 12, 3, 23, 10, 17, 5, 22, 14, 8, 19];
+  const now = new Date();
+  const isDec = now.getMonth() === 11 && now.getDate() <= 24;
+  const todayN = isDec ? now.getDate() : (now.getMonth() === 11 ? 25 : 1);
+  const demo = !isDec;
+  let opened = store.get('oksamyt-advent', { y: now.getFullYear(), days: [] });
+  if (opened.y !== now.getFullYear()) opened = { y: now.getFullYear(), days: [] };
+  const advent = $('#advent');
+
+  function rimSVG(seed) {
+    const r = rng(seed); const pts = [];
+    const n = 7;
+    const jag = () => (r() * 8 + 6);
+    for (let i = 0; i <= n; i++) pts.push([10 + (80 * i) / n + (r() - .5) * 4, jag()]);
+    for (let i = 1; i <= n; i++) pts.push([100 - jag(), 10 + (80 * i) / n + (r() - .5) * 4]);
+    for (let i = n - 1; i >= 0; i--) pts.push([10 + (80 * i) / n + (r() - .5) * 4, 100 - jag()]);
+    for (let i = n - 1; i >= 1; i--) pts.push([jag(), 10 + (80 * i) / n + (r() - .5) * 4]);
+    const inner = 'M' + pts.map(p => p.map(v => v.toFixed(1)).join(' ')).join('L') + 'Z';
+    return `<svg class="win-rim" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path fill-rule="evenodd" fill="#5E1020" d="M0 0H100V100H0Z ${inner}"/>
+      <path fill="none" stroke="#F1DCD0" stroke-opacity=".7" stroke-width="1.6" vector-effect="non-scaling-stroke" d="${inner}"/></svg>`;
+  }
+  const tiltR = rng(19);
+  advent.innerHTML = ORDER.map(d => {
+    const tilt = tiltR() < 0.45 ? ((tiltR() < 0.5 ? -1 : 1) * (0.7 + tiltR() * 0.8)).toFixed(2) : 0;
+    const future = d > todayN, isToday = d === todayN;
+    const isOpen = opened.days.includes(d);
+    const label = future
+      ? `${d} грудня — відкриється пізніше`
+      : `${d} грудня${isToday ? ', сьогодні' : ''}${isOpen ? ' — відкрито, показати подарунок' : ' — відкрити віконце'}`;
+    return `<button type="button" class="win${isToday ? ' is-today' : ''}${isOpen ? ' is-open' : ''}" style="--tilt:${tilt}deg" data-day="${d}" ${future ? 'disabled' : ''} aria-label="${label}">
+      <span class="win-inside" aria-hidden="true">${bonHTML(CANDIES[d % 6])}<span>${d} гр.</span></span>
+      ${rimSVG(d * 97)}
+      <span class="win-door" aria-hidden="true">${d}</span>
+    </button>`;
+  }).join('');
+  if (demo) {
+    const note = $('#demoNote'); note.hidden = false;
+    note.textContent = now.getMonth() === 11
+      ? 'Адвент завершився — усі віконця вже можна відкрити.'
+      : 'Календар стартує 1 грудня. Поки що це демо: перше віконце вже можна відкрити.';
+  }
+  function showGift(d) {
+    const g = $('#gift');
+    $('#giftTitle').textContent = `Подарунок ${d} грудня`;
+    $('#giftText').textContent = GIFTS[d - 1];
+    g.classList.remove('reveal-gift'); void g.offsetWidth; if (!RM) g.classList.add('reveal-gift');
+  }
+  advent.addEventListener('click', e => {
+    const b = e.target.closest('.win'); if (!b || b.disabled || b.classList.contains('tearing')) return;
+    const d = +b.dataset.day;
+    if (b.classList.contains('is-open')) { showGift(d); return; }
+    const finish = () => {
+      b.classList.remove('tearing'); b.classList.add('is-open');
+      b.setAttribute('aria-label', `${d} грудня — відкрито, показати подарунок`);
+      if (!opened.days.includes(d)) opened.days.push(d);
+      store.set('oksamyt-advent', opened);
+      showGift(d);
+    };
+    if (RM) return finish();
+    b.classList.add('tearing');
+    setTimeout(finish, 900);
+  });
+
+  /* ---------------- corporate form ---------------- */
+  const form = $('#corpForm'), fDate = $('#fDate');
+  fDate.min = iso(addDays(today, 3)); fDate.value = iso(addDays(today, 7));
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const err = $('#formError'); err.textContent = '';
+    const contact = $('#fContact').value.trim();
+    const okContact = /^\S+@\S+\.\S+$/.test(contact) || contact.replace(/[^\d]/g, '').length >= 10;
+    $('#fContact').setCustomValidity(contact && !okContact ? 'Вкажіть e-mail або номер телефону' : '');
+    if (!form.checkValidity()) {
+      const bad = form.querySelector(':invalid');
+      err.textContent = bad === $('#fQty') ? 'Мінімальне замовлення — 10 коробок.'
+        : bad === fDate ? 'Оберіть дату не раніше ніж за 3 дні від сьогодні.'
+        : bad === $('#fContact') && contact ? 'Вкажіть коректний e-mail або телефон.'
+        : 'Будь ласка, заповніть обов’язкові поля.';
+      bad?.focus();
+      return;
+    }
+    form.innerHTML = `<div class="form-success" role="status" tabindex="-1"><strong>Дякуємо! Зв’яжемося протягом дня</strong><br><span class="hint">Концепт-проєкт: дані нікуди не надсилаються.</span></div>`;
+    form.querySelector('.form-success').focus();
+  });
+
+  /* ---------------- reveal on scroll ---------------- */
+  function revealAll() { $$('.reveal').forEach(el => el.classList.add('in')); }
+  if (!RM && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('motion');
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    $$('.reveal').forEach(el => io.observe(el));
+  } else revealAll();
+
+  /* ---------------- init ---------------- */
+  renderBox(); syncDate(); renderCart(); buildHero(); headerState();
+  document.fonts?.ready.then(() => { buildHero(); });
+})();
+</script>
+</body>
+</html>
